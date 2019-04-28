@@ -24,7 +24,10 @@ Route::get('events', 'EventsController@index')->name('events');
 
 Route::get('events/specials', 'EventsController@specialsIndex')->name('specials');
 
+// Profile
 Route::get('profile', 'ProfileController@index')->name('profile');
+Route::put('profile/password', 'ProfileController@updatePassword')->name('profile.password');
+Route::put('profile/email', 'ProfileController@updateEmail')->name('profile.email');
 
 Route::get('admins', 'AdminsController@index')->name('admins');
 

@@ -26,10 +26,10 @@
                             <div class="profile-widget-item-label">Dernier Modification</div>
                             <div class="profile-widget-item-value">{{date('d-m-Y', strtotime($admin->updated_at))}}</div>
                         </div>
-                        <div class="profile-widget-item">
-                            <div class="profile-widget-item-label">Revue</div>
-                            <div class="profile-widget-item-value">{{$reviews}}</div>
-                        </div>
+                        {{--<div class="profile-widget-item">--}}
+                            {{--<div class="profile-widget-item-label">Revue</div>--}}
+                            {{--<div class="profile-widget-item-value">10</div>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
                 <div class="profile-widget-description">
@@ -48,24 +48,24 @@
                             <span class="btn btn-sm btn-light float-right mr-2"
                                   data-remodal-target="edit-email">Changer</span>
                         </li>
-                        <li class="list-group-item">
-                            <b>Nom d'utilisateur</b>
-                            <span class="float-right">{{$admin->username}}</span>
-                        </li>
+                        {{--<li class="list-group-item">--}}
+                            {{--<b>Nom d'utilisateur</b>--}}
+                            {{--<span class="float-right">{{$admin->username}}</span>--}}
+                        {{--</li>--}}
                         <li class="list-group-item">
                             <b>Mot de pass</b>
                             <span class="float-right">*************</span>
                             <span class="btn btn-sm btn-light float-right mr-2"
                                   data-remodal-target="edit-password">Changer</span>
                         </li>
-                        <li class="list-group-item">
-                            <b>Téléphone</b>
-                            <span class="float-right">{{$admin->tel}}</span>
-                        </li>
-                        <li class="list-group-item">
-                            <b>Type</b>
-                            <span class="float-right">{{$admin->type}}</span>
-                        </li>
+                        {{--<li class="list-group-item">--}}
+                            {{--<b>Téléphone</b>--}}
+                            {{--<span class="float-right">{{$admin->tel}}</span>--}}
+                        {{--</li>--}}
+                        {{--<li class="list-group-item">--}}
+                            {{--<b>Type</b>--}}
+                            {{--<span class="float-right">{{$admin->type}}</span>--}}
+                        {{--</li>--}}
                     </ul>
                 </div>
             </div>
@@ -73,8 +73,8 @@
     </div>
 
     {{--Start Include Modals--}}
-    @include('profile/password_modal')
-    @include('profile/email_modal')
+    @include('administration.profile.password_modal')
+    @include('administration.profile.email_modal')
     {{--End Include Modals--}}
 @stop
 
