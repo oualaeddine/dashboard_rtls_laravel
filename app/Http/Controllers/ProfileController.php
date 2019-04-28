@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
 
         $admin = Auth::user();
@@ -56,6 +61,5 @@ class ProfileController extends Controller
 
         $success = 'l\'email est changé avec success';
         return redirect()->back()->withSuccess($success);
-
     }
 }

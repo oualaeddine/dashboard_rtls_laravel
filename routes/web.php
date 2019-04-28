@@ -29,7 +29,11 @@ Route::get('profile', 'ProfileController@index')->name('profile');
 Route::put('profile/password', 'ProfileController@updatePassword')->name('profile.password');
 Route::put('profile/email', 'ProfileController@updateEmail')->name('profile.email');
 
+//Admins
 Route::get('admins', 'AdminsController@index')->name('admins');
+Route::post('admins/add', 'AdminsController@store')->name('admins.add');
+Route::put('admins/update', 'AdminsController@update')->name('admins.update');
+Route::delete('admins/delete', 'AdminsController@delete')->name('admins.delete');
 
 Route::get('config', 'ConfigController@index')->name('config');
 
