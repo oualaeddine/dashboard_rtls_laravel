@@ -1,0 +1,86 @@
+.category-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.category-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 11px rgba(0,0,0,.2);
+}
+
+/* Select2 Fixes */
+.select2-container {
+    z-index: 99999;
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choic,
+.select2-container--default .select2-selection--multiple .select2-selection__choice,
+.select2-container--default .select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+{
+    background-color: #6777ef !important;
+}
+
+/* Request Card Styles */
+.request-card .card-body {
+    padding: 20px 10px !important;
+}
+.request-card .artisan-avatar{
+    float: left;
+    width: 70px;
+    height: 100%;
+}
+
+.request-card .artisan-avatar img {
+    width: 100%;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.request-card .card-infos {
+    display: inline-block;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding-left: 10px;
+}
+
+.request-card .card-infos b {
+    display: inline-block;
+    width: 30%;
+    margin-bottom: 3px;
+}
+
+.artisan-thumbnail {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.profile-widget .profile-widget-picture {
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.modal-transparent {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+/*Date picker*/
+.datepicker, .table-condensed {
+    width: 100%!important;
+}
+
+.datepicker-inline {
+    width: 90% !important;
+    margin: 0 auto;
+}
