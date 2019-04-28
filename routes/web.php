@@ -11,10 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('test', function () {
-    return view('test');
-});
+Route::get('pensioners', 'PensionersController@index')->name('pensioners');
+
+Route::get('employees', 'EmployeesController@index')->name('employees');
+
+Route::get('events', 'EventsController@index')->name('events');
+
+Route::get('events/specials', 'EventsController@specialsIndex')->name('specials');
+
+Route::get('profile', 'ProfileController@index')->name('profile');
+
+Route::get('admins', 'AdminsController@index')->name('admins');
+
+Route::get('config', 'ConfigController@index')->name('config');
+
+
