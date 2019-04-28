@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout');
+
+Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('pensioners', 'PensionersController@index')->name('pensioners');
 
@@ -28,3 +31,7 @@ Route::get('admins', 'AdminsController@index')->name('admins');
 Route::get('config', 'ConfigController@index')->name('config');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
