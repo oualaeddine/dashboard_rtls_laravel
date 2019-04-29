@@ -18,7 +18,11 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('pensioners', 'PensionersController@index')->name('pensioners');
 
+//Employees
 Route::get('employees', 'EmployeesController@index')->name('employees');
+Route::post('employees', 'EmployeesController@store')->name('employees.add');
+Route::put('employees', 'EmployeesController@update')->name('employees.update');
+Route::delete('employees', 'EmployeesController@delete')->name('employees.delete');
 
 Route::get('events', 'EventsController@index')->name('events');
 
