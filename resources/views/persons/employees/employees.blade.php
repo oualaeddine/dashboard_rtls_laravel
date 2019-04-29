@@ -87,49 +87,49 @@
         $(document).ready(function () {
 
 
-            // Start Datatables Options
-            // $('#table_id').DataTable({
-            //     responsive: true,
-            //     "language": {
-            //         "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-            //     },
-            //     dom: 'Bfrtip',
-            //     buttons: [
-            //         {
-            //             extend: 'pdf',
-            //             title: 'Liste des admins',
-            //             exportOptions: {
-            //                 columns: [1,2,3,4,5,6,7],
-            //             } ,
-            //             customize: function (doc) {
-            //                 doc.content[1].table.widths =
-            //                     Array(doc.content[1].table.body[0].length + 1).join('*').split('');
-            //             }
-            //         },
-            //         // {
-            //         //     extend: 'csv',
-            //         //     title: 'Liste des admins',
-            //         //     exportOptions: {
-            //         //         columns: [1,2,3,4,5,6,7]
-            //         //     }
-            //         //
-            //         // },
-            //         {
-            //             extend: 'excel',
-            //             title: 'Liste des admins',
-            //             exportOptions: {
-            //                 columns: [1,2,3,4,5,6,7]
-            //             }
-            //         },
-            //         {
-            //             extend: 'print',
-            //             title: 'Liste des admins',
-            //             exportOptions: {
-            //                 columns: [1,2,3,4,5,6,7]
-            //             }
-            //         }
-            //     ]
-            // });
+            Start Datatables Options
+            $('#table_id').DataTable({
+                responsive: true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+                },
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'pdf',
+                        title: 'Liste des admins',
+                        exportOptions: {
+                            columns: [1,2,3,4,5,6,7],
+                        } ,
+                        customize: function (doc) {
+                            doc.content[1].table.widths =
+                                Array(doc.content[1].table.body[0].length + 1).join('*').split('');
+                        }
+                    },
+                    // {
+                    //     extend: 'csv',
+                    //     title: 'Liste des admins',
+                    //     exportOptions: {
+                    //         columns: [1,2,3,4,5,6,7]
+                    //     }
+                    //
+                    // },
+                    {
+                        extend: 'excel',
+                        title: 'Liste des admins',
+                        exportOptions: {
+                            columns: [1,2,3,4,5,6,7]
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        title: 'Liste des admins',
+                        exportOptions: {
+                            columns: [1,2,3,4,5,6,7]
+                        }
+                    }
+                ]
+            });
             // End Datatables Options
 
             //Start Edit Admin Fill Modal

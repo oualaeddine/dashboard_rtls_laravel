@@ -16,7 +16,11 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index')->name('home');
 
+//Pensioners
 Route::get('pensioners', 'PensionersController@index')->name('pensioners');
+Route::post('pensioners', 'PensionersController@store')->name('pensioners.add');
+Route::put('pensioners', 'PensionersController@update')->name('pensioners.update');
+Route::delete('pensioners', 'PensionersController@delete')->name('pensioners.delete');
 
 //Employees
 Route::get('employees', 'EmployeesController@index')->name('employees');
