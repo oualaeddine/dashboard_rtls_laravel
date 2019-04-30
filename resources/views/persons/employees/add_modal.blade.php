@@ -5,7 +5,7 @@
     <form method="POST" action="{{route('employees.add')}}" class="needs-validation" novalidate="">
         @csrf
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label class="float-left">Nom</label>
                     <div class="input-group">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label class="float-left">Prénom</label>
                     <div class="input-group">
@@ -38,6 +38,22 @@
                                required
                                minlength="4"
                                class="form-control lastname">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="form-group">
+                    <label class="form-label float-left">Type</label>
+                    <div class="selectgroup w-100">
+                        <label class="selectgroup-item">
+                            <input type="radio" name="type" value="{{\App\Enums\PersonTypes::EMPLOYEE}}" class="selectgroup-input" checked="true">
+                            <span class="selectgroup-button">{{\App\Enums\PersonTypes::getDescription(\App\Enums\PersonTypes::EMPLOYEE)}}</span>
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="radio" name="type" value="{{\App\Enums\PersonTypes::RESIDENT}}" class="selectgroup-input">
+                            <span class="selectgroup-button">{{\App\Enums\PersonTypes::getDescription(\App\Enums\PersonTypes::RESIDENT)}}</span>
+                        </label>
+
                     </div>
                 </div>
             </div>

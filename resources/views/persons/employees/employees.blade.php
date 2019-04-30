@@ -26,6 +26,7 @@
                     <th data-priority="2">Nom</th>
                     <th data-priority="3">Prénom</th>
                     <th>uid bracelet</th>
+                    <th>Type</th>
                     <th style="min-width: 80px" data-priority="1">Actions</th>
                 </tr>
                 </thead>
@@ -37,12 +38,18 @@
                         <td>{{$employee->lastname}}</td>
                         <td>{{$employee->uid_bracelet}}</td>
                         <td>
+                            <span class="badge {{$employee->type == \App\Enums\PersonTypes::EMPLOYEE ? 'badge-primary' : 'badge-info'}}">
+                                {{\App\Enums\PersonTypes::getDescription($employee->type)}}
+                            </span>
+                        </td>
+                        <td>
                             <a class="btn  btn-icon btn-sm text-primary edit-employee"
                                href="#"
                                data-id="{{$employee->id}}"
                                data-firstname="{{$employee->firstname}}"
                                data-lastname="{{$employee->lastname}}"
                                data-uid_bracelet="{{$employee->uid_bracelet}}"
+                               data-type="{{$employee->type}}"
                                data-remodal-target="edit-employee"
                                data-toggle="tooltip"
                                data-original-title="Modifier"
@@ -87,7 +94,7 @@
         $(document).ready(function () {
 
 
-            Start Datatables Options
+            // Start Datatables Options
             $('#table_id').DataTable({
                 responsive: true,
                 "language": {
@@ -141,12 +148,21 @@
                 var firstname = button.data('firstname');
                 var lastname = button.data('lastname');
                 var uid_bracelet = button.data('uid_bracelet');
+                var type = button.data('type');
 
                 //Fill Data
                 $('#edit-employee .id').val(id);
                 $('#edit-employee .firstname').val(firstname);
                 $('#edit-employee .lastname').val(lastname);
                 $('#edit-employee .uid_bracelet').val(uid_bracelet);
+                if(type == '{{\App\Enums\PersonTypes::EMPLOYEE}}'){
+                    $('#edit-employee .employee').prop('checked', true);
+                    $('#edit-employee .resident').removeAttr('checked');
+                }
+                else {
+                    $('#edit-employee .resident').prop('checked', true);
+                    $('#edit-employee .employee').removeAttr('checked');
+                }
             });
             //End Edit Admin Fill Modal
 

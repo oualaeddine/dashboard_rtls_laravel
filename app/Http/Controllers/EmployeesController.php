@@ -12,7 +12,7 @@ class EmployeesController extends Controller
 {
     public function index() {
 
-        $employees = Person::where('type', PersonTypes::EMPLOYEE)->get();
+        $employees = Person::where('type', '!=', PersonTypes::PENSIONNAIRE)->get();
 
         return view('persons.employees.employees')
             ->with('employees', $employees);
@@ -21,7 +21,7 @@ class EmployeesController extends Controller
     public function store(AddPersonRequest $request) {
 
         $requestData = $request->all();
-        $requestData = array_merge($requestData, ['type' => PersonTypes::EMPLOYEE]);
+//        $requestData = array_merge($requestData, ['type' => PersonTypes::EMPLOYEE]);
 
         Person::create($requestData);
 
