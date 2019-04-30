@@ -43,7 +43,9 @@ Route::post('admins/add', 'AdminsController@store')->name('admins.add');
 Route::put('admins/update', 'AdminsController@update')->name('admins.update');
 Route::delete('admins/delete', 'AdminsController@delete')->name('admins.delete');
 
+//Settings
 Route::get('config', 'ConfigController@index')->name('config');
+Route::post('config', 'ConfigController@update')->name('config.update');
 
 
 
