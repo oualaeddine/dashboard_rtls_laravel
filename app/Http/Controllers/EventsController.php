@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Point;
+use Trilateration;
 
 class EventsController extends Controller
 {
@@ -30,10 +34,7 @@ class EventsController extends Controller
                 $nearestRoom = $chambre;
             } else {
                 if (count($lastEvents) == 1) {
-                    if ($lastEvents[0]->relaiId != $chambre)
-                        $nearestRoom = $this->compareDistances($lastEvents[0], $event);
-                    else
-                        $nearestRoom = $chambre;
+                    $nearestRoom = $chambre;
                 } else {
                     $lastEvents = $this->sortEventsByDistance($lastEvents);
                     $last2Events = $this->pick2nearestRelays($lastEvents);
@@ -48,8 +49,13 @@ class EventsController extends Controller
 
     private function getLastEvents($uuid)
     {
-        //todo
-        return [];
+        return DB::table('events')
+            ->join('persons', 'person.id', '=', 'events.person_id')
+            ->where([
+                ['persons.uid_bracelet', '=', "$uuid"],
+                ['events.date_time', '<', 'date_sub(now(), interval 6 second)'],
+            ])
+            ->get();
     }
 
     private function saveEvent($event, $chambre)
@@ -57,29 +63,70 @@ class EventsController extends Controller
         //todo
     }
 
-    private function compareDistances($int, $event)
+    private function calculateDistance($event)
     {
-        //todo
-        $rssi = $event->data->rssi;
+        $N = 2;
 
+        $a = ((float)$event->iBeacon->txPower);
+        $b = ((float)$event->rssi);
+
+        $c = $a - $b;
+
+        $xtr = ($c / (10 * $N));
+
+        return pow(10, $xtr);
     }
 
     private function sortEventsByDistance($lastEvents)
     {
-        //todo
+        $length = count($lastEvents);
+        if ($length <= 1) {
+            return $lastEvents;
+        } else {
+            $pivot = $lastEvents[0];
+            $left = $right = array();
+            for ($i = 1; $i < count($lastEvents); $i++) {
+                if ($this->calculateDistance($lastEvents[$i]) < $this->calculateDistance($pivot)) {
+                    $left[] = $lastEvents[$i];
+                } else {
+                    $right[] = $lastEvents[$i];
+                }
+            }
+            return array_merge(quick_sort($left), array($pivot), quick_sort($right));
+        }
     }
 
     private function pick2nearestRelays($lastEvents)
     {
-        //todo
+        return [
+            $lastEvents[0],
+            $lastEvents[1]
+        ];
     }
 
     private function identifyRoomByTrilateration($last2Events, $event)
     {
-        //todo
+        $p1 = new Point($last2Events[0]->x, $last2Events[0]->y, $this->calculateDistance($last2Events[0], $event));
+        $p2 = new Point($last2Events[1]->x, $last2Events[1]->y, $this->calculateDistance($last2Events[1], $event));
+        $p3 = new Point($last2Events[2]->x, $last2Events[2]->y, $this->calculateDistance($last2Events[2], $event));
+        $a = new Trilateration();
+
+        $b = $a->Compute($p1, $p2, $p3);
+
+        $x = $b[0];
+        $y = $b[1];
+
+        $roomId = $this->getRoomByPoint($x, $y);
+
+        return $roomId;
     }
 
     private function checkAccesRight($personUUID, $nearestRoom)
+    {
+        //todo
+    }
+
+    private function getRoomByPoint($x, $y)
     {
         //todo
     }

@@ -19,7 +19,6 @@ class CreateEventsTable extends Migration
             $table->bigInteger('piece_id')->unsigned();
             $table->dateTime('date_time');
             $table->timestamps();
-
             $table->foreign('person_id')->references('id')
                 ->on('persons')->onDelete('cascade');
             $table->foreign('piece_id')->references('id')
