@@ -17,7 +17,6 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      */
     function onOpen(ConnectionInterface $conn)
     {
-        $this->connections[$conn->resourceId] = compact('conn') + ['user_id' => null];
     }
 
     /**
@@ -27,8 +26,7 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      */
     function onClose(ConnectionInterface $conn)
     {
-        $disconnectedId = $conn->resourceId;
-        unset($this->connections[$disconnectedId]);
+
     }
 
     /**
