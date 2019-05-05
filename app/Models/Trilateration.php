@@ -1,20 +1,5 @@
 <?php
-/*
- * This file is part of the Trilateration package.
- *
- *
- * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
- *
- * @author Matias Gutierrez <soporte@tbmsp.net>
- * @file Trilateration.php
- *
- * Project home:
- *   https://github.com/tbmsp/trilateration
- *
- */
 
-//namespace net\TBMSP\Code\Trilateration;
 class Trilateration
 {
     function Compute($p1, $p2, $p3)
