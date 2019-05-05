@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
-class WebSocketController extends Controller implements MessageComponentInterface{
+class WebSocketController extends Controller implements MessageComponentInterface
+{
     private $connections = [];
 
     /**
@@ -14,8 +15,9 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      * @param  ConnectionInterface $conn The socket/connection that just connected to your application
      * @throws \Exception
      */
-    function onOpen(ConnectionInterface $conn){
-
+    function onOpen(ConnectionInterface $conn)
+    {
+        $this->connections[$conn->resourceId] = compact('conn') + ['user_id' => null];
     }
 
     /**
@@ -23,8 +25,10 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      * @param  ConnectionInterface $conn The socket/connection that is closing/closed
      * @throws \Exception
      */
-    function onClose(ConnectionInterface $conn){
-
+    function onClose(ConnectionInterface $conn)
+    {
+        $disconnectedId = $conn->resourceId;
+        unset($this->connections[$disconnectedId]);
     }
 
     /**
@@ -34,7 +38,9 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      * @param  \Exception $e
      * @throws \Exception
      */
-    function onError(ConnectionInterface $conn, \Exception $e){
+    function onError(ConnectionInterface $conn, \Exception $e)
+    {
+        echo "$e\n";
         $conn->close();
     }
 
@@ -44,9 +50,12 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      * @param  string $msg The message received
      * @throws \Exception
      */
-    function onMessage(ConnectionInterface $conn, $msg){
-        echo "$msg \n";
+    function onMessage(ConnectionInterface $conn, $msg)
+    {
+        /** @noinspection PhpComposerExtensionStubsInspection */
+        $event = json_decode($msg);
+        echo "$msg\n";
 
-
+        (new EventsController)->onNewEvent($event);
     }
 }
