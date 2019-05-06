@@ -64,6 +64,13 @@
                     <span> Géestion des admins</span>
                 </a>
             </li>
+
+            <li>
+                <a class="nav-link" href="{{route('rooms')}}">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span> Géestion des pieces</span>
+                </a>
+            </li>
             <li>
                 <a class="nav-link" href="{{route('config')}}">
                     <i class="fas fa-cog"></i>

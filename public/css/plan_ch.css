@@ -1,0 +1,25 @@
+.chambre {
+    fill: #ffffff;
+    opacity: .1;
+
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.chambre:hover {
+    fill: #6777ef;
+    opacity: .2;
+}
+
+.chambre_selected {
+    fill: #6777ef;
+    opacity: .3;
+}
+
+#mapid {
+    height: 600px;
+    background: white;
+}

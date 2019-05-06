@@ -16,6 +16,12 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index')->name('home');
 
+//Rooms
+Route::get('chambres', 'RoomsController@index')->name('rooms');
+Route::post('chambres', 'RoomsController@store')->name('rooms.add');
+Route::put('chambres', 'RoomsController@update')->name('rooms.update');
+Route::delete('chambres', 'RoomsController@delete')->name('rooms.delete');
+
 //Pensioners
 Route::get('pensioners', 'PensionersController@index')->name('pensioners');
 Route::post('pensioners', 'PensionersController@store')->name('pensioners.add');
