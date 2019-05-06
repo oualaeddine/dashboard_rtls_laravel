@@ -1,10 +1,12 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">RTLS</a>
+            <a class="nav-link" href="{{route('home')}}">
+                RTLS</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">RTLS</a>
+            <a class="nav-link" href="{{route('home')}}">
+                RTLS</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">DASHBOARD</li>
@@ -32,11 +34,11 @@
 
             <li class="menu-header">ÉVÉNEMENT</li>
             {{--<li class="nav-item dropdown">--}}
-                {{--<a href="#" class="nav-link has-dropdown"><i class="fas fa-tags"></i><span>Gérer catégories</span></a>--}}
-                {{--<ul class="dropdown-menu">--}}
-                    {{--<li><a class="nav-link" href="{{route('categories.all')}}">Listr des catégories</a></li>--}}
-                    {{--<li><a class="nav-link" href="#">Ajouter catégories</a></li>--}}
-                {{--</ul>--}}
+            {{--<a href="#" class="nav-link has-dropdown"><i class="fas fa-tags"></i><span>Gérer catégories</span></a>--}}
+            {{--<ul class="dropdown-menu">--}}
+            {{--<li><a class="nav-link" href="{{route('categories.all')}}">Listr des catégories</a></li>--}}
+            {{--<li><a class="nav-link" href="#">Ajouter catégories</a></li>--}}
+            {{--</ul>--}}
             {{--</li>--}}
             <li>
                 <a class="nav-link" href="{{route('events')}}">
@@ -67,7 +69,7 @@
 
             <li>
                 <a class="nav-link" href="{{route('rooms')}}">
-                    <i class="fas fa-chalkboard-teacher"></i>
+                    <i class="fas fa-hotel"></i>
                     <span> Géestion des pieces</span>
                 </a>
             </li>
