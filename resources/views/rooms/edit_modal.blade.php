@@ -4,6 +4,9 @@
     <br>
     <form method="POST" action="{{route('rooms.update')}}" class="needs-validation" novalidate="">
         @csrf
+        @method('PUT')
+        <input class="id" name="id" hidden>
+        <input class="data" name="data" hidden>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
@@ -17,7 +20,6 @@
                         <input
                             id="name" name="name"
                                type="text"
-                               pattern="[a-zA-Z ]+$"
                                required
                                minlength="4"
                                class="form-control name">
@@ -25,7 +27,9 @@
 
                     <div class="form-group">
                         <label class="custom-switch mt-2 float-left">
-                            <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                            <input type="checkbox"
+                                   name="is_soins"
+                                   class="custom-switch-input is-soins">
                             <span class="custom-switch-indicator"></span>
                             <span class="custom-switch-description">Cette chambre est une chambre de soins</span>
                         </label>
@@ -33,7 +37,9 @@
                         <br>
 
                         <label class="custom-switch mt-2 float-left">
-                            <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                            <input type="checkbox"
+                                   name="is_interdite"
+                                   class="custom-switch-input is-interdite">
                             <span class="danger-custom-switch-indicator" ></span>
                             <span class="custom-switch-description">Cette chambre est interdite aux pensionaires</span>
                         </label>

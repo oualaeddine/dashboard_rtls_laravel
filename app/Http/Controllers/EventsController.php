@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alert;
 use App\Models\Event;
 use App\Models\Person;
 use App\Models\Piece;
+use App\Models\Seance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Point;
@@ -14,8 +16,11 @@ class EventsController extends Controller
 {
     public function index()
     {
-
-        return view('events.events.events');
+        $alerts = Alert::all();
+        $seances = Seance::all();
+        return view('events.events.events')
+            ->with('alerts', $alerts)
+            ->with('seances', $seances);
     }
 
     public function specialsIndex()

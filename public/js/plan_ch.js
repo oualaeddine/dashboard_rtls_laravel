@@ -51,12 +51,16 @@ function chListHover(id) {
 
 
     $("#"+room.list_row).addClass("tr_selected");
-    console.log(id-1 + " : "+"#"+room.list_row);
+    // console.log(id-1 + " : "+"#"+room.list_row);
 
     let ch = rooms[id - 1];
     ch = $("#" + ch.plan_rect);
     ch.removeClass("chambre");
     ch.addClass("chambre_selected");
+
+    // $('.rooms-list').scrollTop($('#tr_'+id).position().top);
+    // console.log('tr: '+$('#tr_'+id).position().top);
+    // console.log('sc: '+$('.rooms-list').scrollTop());
 }
 function infoCh(id) {
     let room = rooms[id - 1];

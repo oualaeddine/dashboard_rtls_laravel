@@ -5,7 +5,11 @@
 
 @section('css')
     <link rel="stylesheet" href="./css/plan_ch.css"/>
-
+    <style>
+        .rooms-list {
+            overflow-y: auto;
+        }
+    </style>
 @stop
 
 @section('content')
@@ -15,7 +19,7 @@
         <div class="col-lg-8 col-md-12 col-12 col-sm-12">
             <div class="card">
 
-                <div class="card-body align-content-center text-center">
+                <div class="card-body align-content-center text-center map">
                     {{--<div id="mapid">--}}
                     <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -818,267 +822,284 @@
                 <div class="card-header">
                     <span class="card-title">Liste des chambres</span>
                 </div>
-                <div class="card-body">
-                    <div class="card-body p-0">
+                <div class="card-body p-0 rooms-list">
+                    <div class="scroll">
                         <div class="table-responsive">
                             <table class="table table-responsive table-md">
                                 <tbody>
-                                <tr id="tr_1" onmouseover="chListHover(1)" >
-                                    <td>1</td>
-                                    <td>Chambre #01</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm"
-                                           data-id="1"
-                                           data-name="{{--{{$rooms->firstname}}--}}name"
-                                           data-isInterdite="{{--{{$employee->type}}--}}1"
-                                           data-isSoins="0"
-                                           data-remodal-target="room-edit"
-                                           data-toggle="tooltip"
-                                           data-original-title="Modifier">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_2" onmouseover="chListHover(2)">
-                                    <td>2</td>
-                                    <td>Chambre #02</td>
+                                @foreach($rooms as $r)
+                                    <tr id="tr_{{$loop->iteration}}" onmouseover="chListHover({{$loop->iteration}})" >
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>C{{$r->name}}</td>
+                                        <td>
+                                            <a class="btn btn-outline-info btn-sm edit-room-btn"
+                                               data-id="{{$r->id}}"
+                                               data-json_index="{{$loop->index}}"
+                                               data-name="{{$r->name}}"
+                                               data-is_interdite="{{$r->isInterdite}}"
+                                               data-is_soins="{{$r->type == \App\Enums\PieceTypes::SOINS}}"
+                                               data-remodal-target="room-edit"
+                                               data-toggle="tooltip"
+                                               data-original-title="Modifier">info</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                {{--<tr id="tr_1" onmouseover="chListHover(1)" >--}}
+                                {{--<td>1</td>--}}
+                                {{--<td>Chambre #01</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm"--}}
+                                {{--data-id="1"--}}
+                                {{--data-name="--}}{{--{{$rooms->firstname}}--}}{{--name"--}}
+                                {{--data-isInterdite="--}}{{--{{$employee->type}}--}}{{--1"--}}
+                                {{--data-isSoins="0"--}}
+                                {{--data-remodal-target="room-edit"--}}
+                                {{--data-toggle="tooltip"--}}
+                                {{--data-original-title="Modifier">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_2" onmouseover="chListHover(2)">--}}
+                                {{--<td>2</td>--}}
+                                {{--<td>Chambre #02</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_3" onmouseover="chListHover(3)">
-                                    <td>3</td>
-                                    <td>Chambre #03</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_3" onmouseover="chListHover(3)">--}}
+                                {{--<td>3</td>--}}
+                                {{--<td>Chambre #03</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_4" onmouseover="chListHover(4)">
-                                    <td>4</td>
-                                    <td>Chambre #04</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_4" onmouseover="chListHover(4)">--}}
+                                {{--<td>4</td>--}}
+                                {{--<td>Chambre #04</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_5" onmouseover="chListHover(5)">
-                                    <td>5</td>
-                                    <td>Balcon #01</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_5" onmouseover="chListHover(5)">--}}
+                                {{--<td>5</td>--}}
+                                {{--<td>Balcon #01</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_6" onmouseover="chListHover(6)">
-                                    <td>6</td>
-                                    <td>Chambre #06</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_7" onmouseover="chListHover(7)">
-                                    <td>7</td>
-                                    <td>Chambre #07</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_6" onmouseover="chListHover(6)">--}}
+                                {{--<td>6</td>--}}
+                                {{--<td>Chambre #06</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_7" onmouseover="chListHover(7)">--}}
+                                {{--<td>7</td>--}}
+                                {{--<td>Chambre #07</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_8" onmouseover="chListHover(8)">
-                                    <td>8</td>
-                                    <td>Chambre #08</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_8" onmouseover="chListHover(8)">--}}
+                                {{--<td>8</td>--}}
+                                {{--<td>Chambre #08</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_9" onmouseover="chListHover(9)">
-                                    <td>9</td>
-                                    <td>Sejour</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_9" onmouseover="chListHover(9)">--}}
+                                {{--<td>9</td>--}}
+                                {{--<td>Sejour</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_10" onmouseover="chListHover(10)">
-                                    <td>10</td>
-                                    <td>Chambre #10</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_10" onmouseover="chListHover(10)">--}}
+                                {{--<td>10</td>--}}
+                                {{--<td>Chambre #10</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_11" onmouseover="chListHover(11)">
-                                    <td>11</td>
-                                    <td>Chambre #11</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_12" onmouseover="chListHover(12)">
-                                    <td>12</td>
-                                    <td>Chambre #12</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_11" onmouseover="chListHover(11)">--}}
+                                {{--<td>11</td>--}}
+                                {{--<td>Chambre #11</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_12" onmouseover="chListHover(12)">--}}
+                                {{--<td>12</td>--}}
+                                {{--<td>Chambre #12</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_13" onmouseover="chListHover(13)">
-                                    <td>13</td>
-                                    <td>Chambre #13</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_13" onmouseover="chListHover(13)">--}}
+                                {{--<td>13</td>--}}
+                                {{--<td>Chambre #13</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_14" onmouseover="chListHover(14)">
-                                    <td>14</td>
-                                    <td>Terasse</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_14" onmouseover="chListHover(14)">--}}
+                                {{--<td>14</td>--}}
+                                {{--<td>Terasse</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_15" onmouseover="chListHover(15)">
-                                    <td>15</td>
-                                    <td>Salle de soins</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_15" onmouseover="chListHover(15)">--}}
+                                {{--<td>15</td>--}}
+                                {{--<td>Salle de soins</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_16" onmouseover="chListHover(16)">
-                                    <td>16</td>
-                                    <td>Chambre #16</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_17" onmouseover="chListHover(17)">
-                                    <td>17</td>
-                                    <td>Chambre #17</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_16" onmouseover="chListHover(16)">--}}
+                                {{--<td>16</td>--}}
+                                {{--<td>Chambre #16</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_17" onmouseover="chListHover(17)">--}}
+                                {{--<td>17</td>--}}
+                                {{--<td>Chambre #17</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_18" onmouseover="chListHover(18)">
-                                    <td>18</td>
-                                    <td>Chambre #18</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_18" onmouseover="chListHover(18)">--}}
+                                {{--<td>18</td>--}}
+                                {{--<td>Chambre #18</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_19" onmouseover="chListHover(19)">
-                                    <td>19</td>
-                                    <td>Chambre #19</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_19" onmouseover="chListHover(19)">--}}
+                                {{--<td>19</td>--}}
+                                {{--<td>Chambre #19</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_20" onmouseover="chListHover(20)">
-                                    <td>20</td>
-                                    <td>Chambre #20</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_20" onmouseover="chListHover(20)">--}}
+                                {{--<td>20</td>--}}
+                                {{--<td>Chambre #20</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_21" onmouseover="chListHover(21)">
-                                    <td>21</td>
-                                    <td>Chambre #21</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_22" onmouseover="chListHover(22)">
-                                    <td>22</td>
-                                    <td>Chambre #22</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_21" onmouseover="chListHover(21)">--}}
+                                {{--<td>21</td>--}}
+                                {{--<td>Chambre #21</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_22" onmouseover="chListHover(22)">--}}
+                                {{--<td>22</td>--}}
+                                {{--<td>Chambre #22</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_23" onmouseover="chListHover(23)">
-                                    <td>23</td>
-                                    <td>Chambre #23</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_23" onmouseover="chListHover(23)">--}}
+                                {{--<td>23</td>--}}
+                                {{--<td>Chambre #23</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_24" onmouseover="chListHover(24)">
-                                    <td>24</td>
-                                    <td>Chambre #24</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_24" onmouseover="chListHover(24)">--}}
+                                {{--<td>24</td>--}}
+                                {{--<td>Chambre #24</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_25" onmouseover="chListHover(25)">
-                                    <td>25</td>
-                                    <td>Chambre #25</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_25" onmouseover="chListHover(25)">--}}
+                                {{--<td>25</td>--}}
+                                {{--<td>Chambre #25</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_26" onmouseover="chListHover(26)">
-                                    <td>26</td>
-                                    <td>Balcon couvert #02</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_27" onmouseover="chListHover(27)">
-                                    <td>27</td>
-                                    <td>Balcon couvert #03</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_28" onmouseover="chListHover(28)">
-                                    <td>28</td>
-                                    <td>Escaliers #01</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_26" onmouseover="chListHover(26)">--}}
+                                {{--<td>26</td>--}}
+                                {{--<td>Balcon couvert #02</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_27" onmouseover="chListHover(27)">--}}
+                                {{--<td>27</td>--}}
+                                {{--<td>Balcon couvert #03</td>--}}
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_28" onmouseover="chListHover(28)">--}}
+                                {{--<td>28</td>--}}
+                                {{--<td>Escaliers #01</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_29" onmouseover="chListHover(29)">
-                                    <td>29</td>
-                                    <td>Escaliers #02</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_29" onmouseover="chListHover(29)">--}}
+                                {{--<td>29</td>--}}
+                                {{--<td>Escaliers #02</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_30" onmouseover="chListHover(30)">
-                                    <td>30</td>
-                                    <td>Couloir #01</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_30" onmouseover="chListHover(30)">--}}
+                                {{--<td>30</td>--}}
+                                {{--<td>Couloir #01</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_31" onmouseover="chListHover(31)">
-                                    <td>31</td>
-                                    <td>Couloir #02</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_31" onmouseover="chListHover(31)">--}}
+                                {{--<td>31</td>--}}
+                                {{--<td>Couloir #02</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
-                                <tr id="tr_32" onmouseover="chListHover(32)">
-                                    <td>32</td>
-                                    <td>Couloir #03</td>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr id="tr_32" onmouseover="chListHover(32)">--}}
+                                {{--<td>32</td>--}}
+                                {{--<td>Couloir #03</td>--}}
 
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm">info</a>
-                                    </td>
-                                </tr>
+                                {{--<td>--}}
+                                {{--<a class="btn btn-outline-info btn-sm">info</a>--}}
+                                {{--</td>--}}
+                                {{--</tr>--}}
                                 </tbody>
                             </table>
                         </div>
@@ -1101,4 +1122,28 @@
         $('body').addClass("sidebar-mini")
     </script>
     <script src="./js/plan_ch.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var height = $('.map').height();
+            $('.rooms-list').height(height + 50);
+
+            $('.edit-room-btn').click(function () {
+                var btn = $(this);
+
+                var id = btn.data('id');
+                var name = btn.data('name');
+                var isInterdite = btn.data('is_interdite');
+                var isSoins = btn.data('is_soins');
+                var jsonIndex = btn.data('json_index');
+
+                $('#room-edit .id').val(id);
+                $('#room-edit .name').val(name);
+                $('#room-edit .is-interdite').prop('checked', isInterdite);
+                $('#room-edit .is-soins').prop('checked', isSoins);
+                var data = JSON.stringify(rooms[jsonIndex]);
+                $('#room-edit .data').val(data);
+            });
+        })
+    </script>
 @stop
