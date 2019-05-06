@@ -1,0 +1,322 @@
+[
+    {
+        "id": 1,
+        "list_row": "tr_1",
+        "plan_rect": "ch_1",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 2,
+        "list_row": "tr_2",
+        "plan_rect": "ch_2",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 3,
+        "list_row": "tr_3",
+        "plan_rect": "balcon_1",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 4,
+        "list_row": "tr_4",
+        "plan_rect": "ch_4",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 5,
+        "list_row": "tr_5",
+        "plan_rect": "ch_5",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 6,
+        "list_row": "tr_6",
+        "plan_rect": "ch_6",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 7,
+        "list_row": "tr_7",
+        "plan_rect": "ch_7",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 8,
+        "list_row": "tr_8",
+        "plan_rect": "ch_8",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 9,
+        "list_row": "tr_9",
+        "plan_rect": "sejour",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 10,
+        "list_row": "tr_10",
+        "plan_rect": "ch_10",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 11,
+        "list_row": "tr_11",
+        "plan_rect": "ch_11",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 12,
+        "list_row": "tr_12",
+        "plan_rect": "ch_12",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 13,
+        "list_row": "tr_13",
+        "plan_rect": "ch_13",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 14,
+        "list_row": "tr_14",
+        "plan_rect": "terasse",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 15,
+        "list_row": "tr_15",
+        "plan_rect": "soins_1",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 16,
+        "list_row": "tr_16",
+        "plan_rect": "ch_16",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 17,
+        "list_row": "tr_17",
+        "plan_rect": "ch_17",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 18,
+        "list_row": "tr_18",
+        "plan_rect": "ch_18",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 19,
+        "list_row": "tr_19",
+        "plan_rect": "ch_19",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 20,
+        "list_row": "tr_20",
+        "plan_rect": "ch_20",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 21,
+        "list_row": "tr_21",
+        "plan_rect": "ch_21",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 22,
+        "list_row": "tr_22",
+        "plan_rect": "ch_22",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 23,
+        "list_row": "tr_23",
+        "plan_rect": "ch_23",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 24,
+        "list_row": "tr_24",
+        "plan_rect": "ch_24",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 25,
+        "list_row": "tr_25",
+        "plan_rect": "ch_25",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 26,
+        "list_row": "tr_26",
+        "plan_rect": "balcon_2",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 27,
+        "list_row": "tr_27",
+        "plan_rect": "balcon_3",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 28,
+        "list_row": "tr_28",
+        "plan_rect": "escaliers_1",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 29,
+        "list_row": "tr_29",
+        "plan_rect": "escaliers_2",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 30,
+        "list_row": "tr_30",
+        "plan_rect": "couloir_1",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 31,
+        "list_row": "tr_31",
+        "plan_rect": "couloir_2",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    },
+    {
+        "id": 32,
+        "list_row": "tr_32",
+        "plan_rect": "couloir_3",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "isRect": true
+    }
+]

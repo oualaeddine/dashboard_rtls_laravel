@@ -11,7 +11,7 @@ class RoomsController extends Controller
 
 
         $rooms =Piece::all();
-        return view('rooms')
+        return view('rooms.rooms')
             ->with('rooms', $rooms);
     }
 

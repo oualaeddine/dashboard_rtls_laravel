@@ -1,4 +1,4 @@
-@extends('partials/page')
+@extends('partials.page')
 
 
 @section('page_title', 'Gestion des pieces')
@@ -726,83 +726,83 @@
     </g>
 </g>
                         <g id="chambres">
-                            <rect onClick="chClicked(event)" id="ch_1" x="9.75" y="165.75" class="chambre" fill="none"
+                            <rect onmouseover="chListHover(1)" onClick="chClicked(1)" id="ch_1" x="9.75" y="165.75" class="chambre" fill="none"
                                   width="63" height="127.5"/>
-                            <rect onClick="chClicked(event)" id="ch_2" class="chambre" x="75.5" y="204.25" fill="none"
+                            <rect onmouseover="chListHover(2)" onClick="chClicked(2)" id="ch_2" class="chambre" x="75.5" y="204.25" fill="none"
                                   width="55" height="79.25"/>
-                            <rect onClick="chClicked(event)" id="ch_3" class="chambre" x="132" y="204" fill="none"
+                            <rect onmouseover="chListHover(3)" onClick="chClicked(3)" id="ch_3" class="chambre" x="132" y="204" fill="none"
                                   width="59.75" height="81.5"/>
-                            <rect onClick="chClicked(event)" id="ch_4" class="chambre" x="193.5" y="203" fill="none"
+                            <rect onmouseover="chListHover(4)" onClick="chClicked(4)" id="ch_4" class="chambre" x="193.5" y="203" fill="none"
                                   width="60.6667"
                                   height="81.3333"/>
-                            <polygon onClick="chClicked(event)" id="balcon_3" class="chambre" fill="none" points="74.5,165.6667 204.6667,165.3333 204.1667,108.8333 232,109.1667 233.3333,202.6667
+                            <polygon onmouseover="chListHover(5)" onClick="chClicked(5)" id="balcon_1" class="chambre" fill="none" points="74.5,165.6667 204.6667,165.3333 204.1667,108.8333 232,109.1667 233.3333,202.6667
 		74.3333,203.6667 	"/>
-                            <rect onClick="chClicked(event)" id="ch_6" class="chambre" x="234.5" y="109" fill="none"
+                            <rect onmouseover="chListHover(6)" onClick="chClicked(6)" id="ch_6" class="chambre" x="234.5" y="109" fill="none"
                                   width="61.5" height="93.5"/>
-                            <rect onClick="chClicked(event)" id="ch_7" class="chambre" x="297.5" y="108.8333"
+                            <rect onmouseover="chListHover(7)" onClick="chClicked(7)" id="ch_7" class="chambre" x="297.5" y="108.8333"
                                   fill="none" width="56.25"
                                   height="92.6667"/>
-                            <polygon onClick="chClicked(event)" id="ch_8" class="chambre" fill="none" points="440.25,108.25 440,150.25 417.5,150.5 418.25,173.5 411.75,173.5 411.5,181.25 392.75,199
+                            <polygon onmouseover="chListHover(8)" onClick="chClicked(8)" id="ch_8" class="chambre" fill="none" points="440.25,108.25 440,150.25 417.5,150.5 418.25,173.5 411.75,173.5 411.5,181.25 392.75,199
 		392.5,229.5 335.75,229.5 335.75,203.5 354.75,202.25 353.75,108.8333 	"/>
-                            <rect onClick="chClicked(event)" id="sejour" class="chambre" x="440.5" y="108" fill="none"
+                            <rect onmouseover="chListHover(9)" onClick="chClicked(9)" id="sejour" class="chambre" x="440.5" y="108" fill="none"
                                   width="64.75"
                                   height="85.25"/>
-                            <rect onClick="chClicked(event)" id="ch_10" class="chambre" x="663" y="163.5" fill="none"
+                            <rect onmouseover="chListHover(10)" onClick="chClicked(10)" id="ch_10" class="chambre" x="663" y="163.5" fill="none"
                                   width="67.5" height="129"/>
-                            <rect onClick="chClicked(event)" id="ch_11" class="chambre" x="604.5" y="205.5" fill="none"
+                            <rect onmouseover="chListHover(11)" onClick="chClicked(11)" id="ch_11" class="chambre" x="604.5" y="205.5" fill="none"
                                   width="58.5" height="87"/>
-                            <rect onClick="chClicked(event)" id="ch_12" class="chambre" x="547.5" y="206.5" fill="none"
+                            <rect onmouseover="chListHover(12)" onClick="chClicked(12)" id="ch_12" class="chambre" x="547.5" y="206.5" fill="none"
                                   width="57" height="86"/>
-                            <rect onClick="chClicked(event)" id="ch_13" class="chambre" x="492" y="207" fill="none"
+                            <rect onmouseover="chListHover(13)" onClick="chClicked(13)" id="ch_13" class="chambre" x="492" y="207" fill="none"
                                   width="55.5" height="85.5"/>
-                            <polygon onClick="chClicked(event)" id="terasse" class="chambre" fill="none" points="505.5,206 505.25,108 566,107.5 569,88 577.5,72.5 588.5,56.5 605.5,40 622,30.5 638,22
+                            <polygon onmouseover="chListHover(14)" onClick="chClicked(14)" id="terasse" class="chambre" fill="none" points="505.5,206 505.25,108 566,107.5 569,88 577.5,72.5 588.5,56.5 605.5,40 622,30.5 638,22
 		663,13.5 688,6 717,0 730.5,0 730.5,163.5 663,163.5 665,205 	"/>
-                            <polygon onClick="chClicked(event)" id="soins_1" class="chambre" fill="none"
+                            <polygon onmouseover="chListHover(15)" onClick="chClicked(15)" id="soins_1" class="chambre" fill="none"
                                      points="411,230 323.5,229 304,257.5 304,277 324,294.5 412,294 	"/>
-                            <rect onClick="chClicked(event)" id="ch_16" class="chambre" x="11" y="325" fill="none"
+                            <rect onmouseover="chListHover(16)" onClick="chClicked(16)" id="ch_16" class="chambre" x="11" y="325" fill="none"
                                   width="62.6667"
                                   height="124.6667"/>
-                            <rect onClick="chClicked(event)" id="ch_17" class="chambre" x="75.3333" y="320" fill="none"
+                            <rect onmouseover="chListHover(17)" onClick="chClicked(17)" id="ch_17" class="chambre" x="75.3333" y="320" fill="none"
                                   width="57.3333"
                                   height="92.6667"/>
-                            <rect onClick="chClicked(event)" id="ch_18" class="chambre" x="132.6667" y="330"
+                            <rect onmouseover="chListHover(18)" onClick="chClicked(18)" id="ch_18" class="chambre" x="132.6667" y="330"
                                   fill="none" width="61"
                                   height="82.6667"/>
-                            <rect onClick="chClicked(event)" id="escaliers" class="chambre" x="193.6667" y="328.3333"
+                            <rect onmouseover="chListHover(28)" onClick="chClicked(28)" id="escaliers_1" class="chambre" x="193.6667" y="328.3333"
                                   fill="none" width="54.6667"
                                   height="84.3333"/>
-                            <rect onClick="chClicked(event)" id="balcon" class="chambre" x="73.6667" y="413.6667"
+                            <rect onmouseover="chListHover(26)" onClick="chClicked(26)" id="balcon_2" class="chambre" x="73.6667" y="413.6667"
                                   fill="none" width="173"
                                   height="35.6667"/>
-                            <rect onClick="chClicked(event)" id="ch_19" class="chambre" x="248.6667" y="351.6667"
+                            <rect onmouseover="chListHover(19)" onClick="chClicked(19)" id="ch_19" class="chambre" x="248.6667" y="351.6667"
                                   fill="none" width="59.3333"
                                   height="96.6667"/>
-                            <rect onClick="chClicked(event)" id="ch_20" class="chambre" x="307.6667" y="331"
+                            <rect onmouseover="chListHover(20)" onClick="chClicked(20)" id="ch_20" class="chambre" x="307.6667" y="331"
                                   fill="none" width="57.6667"
                                   height="81"/>
-                            <rect onClick="chClicked(event)" id="ch_21" class="chambre" x="366" y="320.3333"
+                            <rect onmouseover="chListHover(21)" onClick="chClicked(21)" id="ch_21" class="chambre" x="366" y="320.3333"
                                   fill="none" width="56.3333"
                                   height="92.6667"/>
-                            <polygon onClick="chClicked(event)" id="ch_22" class="chambre" fill="none" points="458.25,322 422.3333,320.3333 423.5,412 428,412 427.25,450.5 494.5,451.5 493.75,352.75
+                            <polygon onmouseover="chListHover(22)" onClick="chClicked(22)" id="ch_22" class="chambre" fill="none" points="458.25,322 422.3333,320.3333 423.5,412 428,412 427.25,450.5 494.5,451.5 493.75,352.75
 		459.5,353.25 458.2799,322.7484 	"/>
-                            <rect onClick="chClicked(event)" id="escaliers_2" class="chambre" x="495" y="330"
+                            <rect onmouseover="chListHover(29)" onClick="chClicked(29)" id="escaliers_2" class="chambre" x="495" y="330"
                                   fill="none" width="53"
                                   height="82.75"/>
-                            <rect onClick="chClicked(event)" id="ch_23" class="chambre" x="548" y="330" fill="none"
+                            <rect onmouseover="chListHover(23)" onClick="chClicked(23)"  id="ch_23" class="chambre" x="548" y="330" fill="none"
                                   width="58.5" height="83"/>
-                            <rect onClick="chClicked(event)" id="ch_24" class="chambre" x="606.5" y="321" fill="none"
+                            <rect onmouseover="chListHover(24)" onClick="chClicked(24)" id="ch_24" class="chambre" x="606.5" y="321" fill="none"
                                   width="56.8333" height="92"/>
-                            <rect onClick="chClicked(event)" id="ch_25" class="chambre" x="666" y="321" fill="none"
+                            <rect onmouseover="chListHover(25)" onClick="chClicked(25)" id="ch_25" class="chambre" x="666" y="321" fill="none"
                                   width="66.3333"
                                   height="129.6667"/>
-                            <rect onClick="chClicked(event)" id="balcon_2" class="chambre" x="494" y="414" fill="none"
+                            <rect onmouseover="chListHover(27)" onClick="chClicked(27)" id="balcon_3" class="chambre" x="494" y="414" fill="none"
                                   width="173" height="36"/>
-                            <rect onClick="chClicked(event)" id="couloir_1" class="chambre" x="9.3333" y="292.6667"
+                            <rect onmouseover="chListHover(30)" onClick="chClicked(30)" id="couloir_1" class="chambre" x="9.3333" y="292.6667"
                                   fill="none" width="682"
                                   height="34.6667"/>
-                            <polygon onClick="chClicked(event)" id="couloir_2" class="chambre" fill="none" points="265.25,193.25 322.25,193.25 332,203 332,230 325,230.25 305.25,255.75 304.75,276
+                            <polygon onmouseover="chListHover(31)" onClick="chClicked(31)" id="couloir_2" class="chambre" fill="none" points="265.25,193.25 322.25,193.25 332,203 332,230 325,230.25 305.25,255.75 304.75,276
 		325.75,296 264.75,295.25 	"/>
-                            <polygon onClick="chClicked(event)" id="couloir_3" class="chambre" fill="none"
+                            <polygon onmouseover="chListHover(32)" onClick="chClicked(32)" id="couloir_3" class="chambre" fill="none"
                                      points="440.5,193.25 481.5,192.5 483,292 450,293.5 450,215.5 442.5,216 	"/>
                         </g>
 </svg>
@@ -821,255 +821,262 @@
                 <div class="card-body">
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-striped table-md">
+                            <table class="table table-responsive table-md">
                                 <tbody>
-                                <tr onmouseover="chListHover(1)">
+                                <tr id="tr_1" onmouseover="chListHover(1)" >
                                     <td>1</td>
                                     <td>Chambre #01</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm"
+                                           data-id="1"
+                                           data-name="{{--{{$rooms->firstname}}--}}name"
+                                           data-isInterdite="{{--{{$employee->type}}--}}1"
+                                           data-isSoins="0"
+                                           data-remodal-target="room-edit"
+                                           data-toggle="tooltip"
+                                           data-original-title="Modifier">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(2)">
+                                <tr id="tr_2" onmouseover="chListHover(2)">
                                     <td>2</td>
                                     <td>Chambre #02</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(3)">
+                                <tr id="tr_3" onmouseover="chListHover(3)">
                                     <td>3</td>
                                     <td>Chambre #03</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(4)">
+                                <tr id="tr_4" onmouseover="chListHover(4)">
                                     <td>4</td>
                                     <td>Chambre #04</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(5)">
+                                <tr id="tr_5" onmouseover="chListHover(5)">
                                     <td>5</td>
                                     <td>Balcon #01</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(6)">
+                                <tr id="tr_6" onmouseover="chListHover(6)">
                                     <td>6</td>
                                     <td>Chambre #06</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(7)">
+                                <tr id="tr_7" onmouseover="chListHover(7)">
                                     <td>7</td>
                                     <td>Chambre #07</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(8)">
+                                <tr id="tr_8" onmouseover="chListHover(8)">
                                     <td>8</td>
                                     <td>Chambre #08</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(9)">
+                                <tr id="tr_9" onmouseover="chListHover(9)">
                                     <td>9</td>
                                     <td>Sejour</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(10)">
+                                <tr id="tr_10" onmouseover="chListHover(10)">
                                     <td>10</td>
                                     <td>Chambre #10</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(11)">
+                                <tr id="tr_11" onmouseover="chListHover(11)">
                                     <td>11</td>
                                     <td>Chambre #11</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(12)">
+                                <tr id="tr_12" onmouseover="chListHover(12)">
                                     <td>12</td>
                                     <td>Chambre #12</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(13)">
+                                <tr id="tr_13" onmouseover="chListHover(13)">
                                     <td>13</td>
                                     <td>Chambre #13</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(14)">
+                                <tr id="tr_14" onmouseover="chListHover(14)">
                                     <td>14</td>
                                     <td>Terasse</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(15)">
+                                <tr id="tr_15" onmouseover="chListHover(15)">
                                     <td>15</td>
                                     <td>Salle de soins</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(16)">
+                                <tr id="tr_16" onmouseover="chListHover(16)">
                                     <td>16</td>
                                     <td>Chambre #16</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(17)">
+                                <tr id="tr_17" onmouseover="chListHover(17)">
                                     <td>17</td>
                                     <td>Chambre #17</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(18)">
+                                <tr id="tr_18" onmouseover="chListHover(18)">
                                     <td>18</td>
                                     <td>Chambre #18</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(19)">
+                                <tr id="tr_19" onmouseover="chListHover(19)">
                                     <td>19</td>
                                     <td>Chambre #19</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(20)">
+                                <tr id="tr_20" onmouseover="chListHover(20)">
                                     <td>20</td>
                                     <td>Chambre #20</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(21)">
+                                <tr id="tr_21" onmouseover="chListHover(21)">
                                     <td>21</td>
                                     <td>Chambre #21</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(22)">
+                                <tr id="tr_22" onmouseover="chListHover(22)">
                                     <td>22</td>
                                     <td>Chambre #22</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(23)">
+                                <tr id="tr_23" onmouseover="chListHover(23)">
                                     <td>23</td>
                                     <td>Chambre #23</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(24)">
+                                <tr id="tr_24" onmouseover="chListHover(24)">
                                     <td>24</td>
                                     <td>Chambre #24</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(25)">
+                                <tr id="tr_25" onmouseover="chListHover(25)">
                                     <td>25</td>
                                     <td>Chambre #25</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(26)">
+                                <tr id="tr_26" onmouseover="chListHover(26)">
                                     <td>26</td>
                                     <td>Balcon couvert #02</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(27)">
+                                <tr id="tr_27" onmouseover="chListHover(27)">
                                     <td>27</td>
                                     <td>Balcon couvert #03</td>
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(28)">
+                                <tr id="tr_28" onmouseover="chListHover(28)">
                                     <td>28</td>
                                     <td>Escaliers #01</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(29)">
+                                <tr id="tr_29" onmouseover="chListHover(29)">
                                     <td>29</td>
                                     <td>Escaliers #02</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(30)">
+                                <tr id="tr_30" onmouseover="chListHover(30)">
                                     <td>30</td>
                                     <td>Couloir #01</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(31)">
+                                <tr id="tr_31" onmouseover="chListHover(31)">
                                     <td>31</td>
                                     <td>Couloir #02</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
-                                <tr onmouseover="chListHover(32)">
+                                <tr id="tr_32" onmouseover="chListHover(32)">
                                     <td>32</td>
                                     <td>Couloir #03</td>
 
                                     <td>
-                                        <button class="btn btn-outline-info btn-sm">info</button>
+                                        <a class="btn btn-outline-info btn-sm">info</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1080,6 +1087,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+    @include('rooms.edit_modal')
+
 
 @stop
 

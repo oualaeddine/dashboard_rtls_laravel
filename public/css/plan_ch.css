@@ -19,7 +19,48 @@
     opacity: .3;
 }
 
+.tr_selected{
+    background-color:#6777ef;
+    color: white;
+}
+
 #mapid {
     height: 600px;
     background: white;
 }
+
+
+.danger-custom-switch-indicator{
+
+}
+
+
+
+.danger-custom-switch-indicator {
+    display: inline-block;
+    height: 1.25rem;
+    width: 2.25rem;
+    background: rgba(239, 136, 115, 0.21);
+    border-radius: 50px;
+    position: relative;
+    vertical-align: bottom;
+    border: 1px solid rgba(0, 40, 100, 0.12);
+    transition: .3s border-color, .3s background-color; }
+.danger-custom-switch-indicator:before {
+    content: '';
+    position: absolute;
+    height: calc(1.25rem - 4px);
+    width: calc(1.25rem - 4px);
+    top: 1px;
+    left: 1px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .3s left; }
+
+.custom-switch-input:checked ~ .danger-custom-switch-indicator {
+    background: #dc3545; }
+.custom-switch-input:checked ~ .danger-custom-switch-indicator:before {
+    left: calc(1rem + 1px); }
+
+.custom-switch-input:focus ~ .danger-custom-switch-indicator {
+    border-color: #dc3545; }
