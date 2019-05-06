@@ -45,7 +45,11 @@ function chClicked(id) {
 
 function chListHover(id) {
     resetStyle();
+
+
     let room = rooms[id - 1];
+
+
     $("#"+room.list_row).addClass("tr_selected");
     console.log(id-1 + " : "+"#"+room.list_row);
 

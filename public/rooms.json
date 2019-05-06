@@ -22,7 +22,7 @@
     {
         "id": 3,
         "list_row": "tr_3",
-        "plan_rect": "balcon_1",
+        "plan_rect": "ch_3",
         "x": 0,
         "y": 0,
         "width": 0,
@@ -42,7 +42,7 @@
     {
         "id": 5,
         "list_row": "tr_5",
-        "plan_rect": "ch_5",
+        "plan_rect": "balcon_1",
         "x": 0,
         "y": 0,
         "width": 0,
