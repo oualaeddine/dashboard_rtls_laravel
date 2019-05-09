@@ -305,7 +305,7 @@
 
         var w = 1280 * 3,
             h = 806 * 3,
-            url = './enzo.svg';
+            url = './plan_with_ch.svg';
         // calculate the edges of the image, in coordinate space
         var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
         var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
@@ -323,6 +323,7 @@
 
         function clicked(e) {
             console.log(e.latlng)
+            navigator.clipboard.writeText( JSON.stringify(e.latlng));
         }
 
         map.on('click', clicked);

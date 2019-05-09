@@ -11,9 +11,9 @@
         <ul class="sidebar-menu">
             <li class="menu-header">DASHBOARD</li>
             <li>
-                <a class="nav-link" href="{{route('home')}}">
+                <a class="nav-link text-primary" href="{{route('home')}}">
                     <i class="fas fa-credit-card"></i>
-                    <span>Accueil</span>
+                    <span>Positions en temps réel</span>
                 </a>
             </li>
 
@@ -34,7 +34,7 @@
 
             <li class="menu-header">ÉVÉNEMENT</li>
             <li>
-                <a class="nav-link" href="{{route('events.alerts')}}">
+                <a class="nav-link nav-link text-danger" href="{{route('events.alerts')}}">
                     <i class="fas fa-bell"></i>
                     <span>Alerts</span>
                 </a>
@@ -46,9 +46,9 @@
                 </a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('specials')}}">
-                    <i class="fas fa-calendar-day"></i>
-                    <span>Événements spéciaux</span>
+                <a class="nav-link text-info" href="{{route('specials')}}">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Seances de soins</span>
                 </a>
             </li>
 
@@ -72,12 +72,12 @@
                     <span> Géestion des pieces</span>
                 </a>
             </li>
-            <li>
+           {{-- <li>
                 <a class="nav-link" href="{{route('config')}}">
                     <i class="fas fa-cog"></i>
                     <span> Config</span>
                 </a>
-            </li>
+            </li>--}}
         </ul>
     </aside>
 </div>

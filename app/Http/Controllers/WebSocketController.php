@@ -52,8 +52,9 @@ class WebSocketController extends Controller implements MessageComponentInterfac
     {
         /** @noinspection PhpComposerExtensionStubsInspection */
         $event = json_decode($msg);
-        echo "$msg\n";
+        (new EventsController)->onNewEvent($event, function ($uuid, $roomId) {
 
-        (new EventsController)->onNewEvent($event);
+            echo " uuid : " . $uuid . " room : " . $roomId."\n";
+        });
     }
 }
