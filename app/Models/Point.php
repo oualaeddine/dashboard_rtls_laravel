@@ -1,31 +1,32 @@
 <?php
+namespace App\Models;
 
 class Point
 {
-    private $lt;
-    private $ln;
-    private $r;
+     public $x;
+    public $y;
+    public $d;
 
-    public function __construct($lt, $ln, $r)
+    public function __construct($x, $y, $d)
     {
-        $this->lt = $lt;
-        $this->ln = $ln;
-        $this->r = $r;
+        $this->x = $x;
+        $this->y = $y;
+        $this->d = $d;
     }
 
-    public function glt()
+    public function getX()
     {
-        return $this->lt;
+        return $this->x;
     }
 
-    public function gln()
+    public function getY()
     {
-        return $this->ln;
+        return $this->y;
     }
 
-    public function gr()
+    public function getD()
     {
-        return $this->r;
+        return $this->d;
     }
 }
 
