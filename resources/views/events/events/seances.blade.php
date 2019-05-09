@@ -12,33 +12,33 @@
 
 @section('content')
     {{--Start Alerts Table--}}
-    <div class="card">
-        <div class="card-header">
-            alertes
-        </div>
-        <div class="card-body">
-            <table id="table_id" class="table table-striped w-100">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th data-priority="2">Personne</th>
-                    <th data-priority="3">Pièce</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($alerts as $a)
-                    <tr>
-                        <td>{{$a->id}}</td>
-                        <td>{{$a->person->fullname()}}</td>
-                        <td>{{$a->piece->name}}</td>
-                        <td>{{$a->date_time}}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
+    {{--<div class="card">--}}
+        {{--<div class="card-header">--}}
+            {{--alertes--}}
+        {{--</div>--}}
+        {{--<div class="card-body">--}}
+            {{--<table id="table_id" class="table table-striped w-100">--}}
+                {{--<thead>--}}
+                {{--<tr>--}}
+                    {{--<th>#</th>--}}
+                    {{--<th data-priority="2">Personne</th>--}}
+                    {{--<th data-priority="3">Pièce</th>--}}
+                    {{--<th>Date</th>--}}
+                {{--</tr>--}}
+                {{--</thead>--}}
+                {{--<tbody>--}}
+                {{--@foreach($alerts as $a)--}}
+                    {{--<tr>--}}
+                        {{--<td>{{$a->id}}</td>--}}
+                        {{--<td>{{$a->person->fullname()}}</td>--}}
+                        {{--<td>{{$a->piece->name}}</td>--}}
+                        {{--<td>{{$a->date_time}}</td>--}}
+                    {{--</tr>--}}
+                {{--@endforeach--}}
+                {{--</tbody>--}}
+            {{--</table>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     {{--End Alerts Table--}}
 
     {{--Start Seances Table--}}

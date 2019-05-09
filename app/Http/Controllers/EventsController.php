@@ -14,12 +14,18 @@ use Trilateration;
 
 class EventsController extends Controller
 {
-    public function index()
+    public function alertsIndex()
+    {
+        $alerts = Alert::all();
+        return view('events.events.alerts')
+            ->with('alerts', $alerts);
+    }
+
+    public function seancesIndex()
     {
         $alerts = Alert::all();
         $seances = Seance::all();
-        return view('events.events.events')
-            ->with('alerts', $alerts)
+        return view('events.events.seances')
             ->with('seances', $seances);
     }
 

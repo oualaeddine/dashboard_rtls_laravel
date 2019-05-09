@@ -9,6 +9,10 @@
         .rooms-list {
             overflow-y: auto;
         }
+        .is-soins {background-color: rgba(103, 119, 239, 0.33)}
+        .is-interdite {background-color: rgba(191, 46, 46, 0.33)
+        }
+        .tr_selected {background-color: #6777ef !important;}
     </style>
 @stop
 
@@ -828,7 +832,9 @@
                             <table class="table table-responsive table-md">
                                 <tbody>
                                 @foreach($rooms as $r)
-                                    <tr id="tr_{{$loop->iteration}}" onmouseover="chListHover({{$loop->iteration}})" >
+                                    <tr id="tr_{{$loop->iteration}}"
+                                        class="{{$r->type == \App\Enums\PieceTypes::SOINS ? 'is-soins' : ''}} {{$r->isInterdite == 1 ? 'is-interdite' : ''}}"
+                                        onmouseover="chListHover({{$loop->iteration}})">
                                         <td>{{$loop->iteration}}</td>
                                         <td>C{{$r->name}}</td>
                                         <td>

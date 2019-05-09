@@ -34,8 +34,9 @@ Route::post('employees', 'EmployeesController@store')->name('employees.add');
 Route::put('employees', 'EmployeesController@update')->name('employees.update');
 Route::delete('employees', 'EmployeesController@delete')->name('employees.delete');
 
-Route::get('events', 'EventsController@index')->name('events');
-
+//Events
+Route::get('events/alerts', 'EventsController@alertsIndex')->name('events.alerts');
+Route::get('events/seances', 'EventsController@seancesIndex')->name('events.seances');
 Route::get('events/specials', 'EventsController@specialsIndex')->name('specials');
 
 // Profile

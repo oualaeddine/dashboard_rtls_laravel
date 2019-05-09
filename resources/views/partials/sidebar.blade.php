@@ -33,17 +33,16 @@
             </li>
 
             <li class="menu-header">ÉVÉNEMENT</li>
-            {{--<li class="nav-item dropdown">--}}
-            {{--<a href="#" class="nav-link has-dropdown"><i class="fas fa-tags"></i><span>Gérer catégories</span></a>--}}
-            {{--<ul class="dropdown-menu">--}}
-            {{--<li><a class="nav-link" href="{{route('categories.all')}}">Listr des catégories</a></li>--}}
-            {{--<li><a class="nav-link" href="#">Ajouter catégories</a></li>--}}
-            {{--</ul>--}}
-            {{--</li>--}}
             <li>
-                <a class="nav-link" href="{{route('events')}}">
+                <a class="nav-link" href="{{route('events.alerts')}}">
+                    <i class="fas fa-bell"></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{{route('events.seances')}}">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Événements</span>
+                    <span>Séances</span>
                 </a>
             </li>
             <li>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Seance extends Model
@@ -18,10 +19,15 @@ class Seance extends Model
 
     public function getDuration() {
 
-        $hours = (int) ($this->duration / 60);
-        $minutes = $this->duration;
+        $dateStart = Carbon::parse($this->date_start);
+        $dateEnd = Carbon::parse($this->date_end);
+
+        $durationInMnutes = $dateEnd->diffInMinutes($dateStart);
+
+        $hours = (int) ($durationInMnutes / 60);
+        $minutes = $durationInMnutes;
         if($hours > 0) {
-            $minutes = $this->duration % 60;
+            $minutes = $durationInMnutes % 60;
 
             return "$hours H $minutes M";
         }
