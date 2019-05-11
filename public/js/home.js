@@ -31,7 +31,7 @@ function initMap() {
     }).addAttribution('<a href="https://ktalyse.com">Ktalyse.com</a>').addTo(map);
 
     function clicked(e) {
-      //  console.log(e.latlng)
+        //  console.log(e.latlng)
     }
 
     map.on('click', clicked);
@@ -41,9 +41,8 @@ var personsRooms = [];
 var markers = [];
 
 function addPerson(room, person) {
-
+    // noinspection EqualityComparisonWithCoercionJS
     if (personsRooms[person.id] != room) {
-
         if (typeof markers[person.id] !== 'undefined') {
             map.removeLayer(markers[person.id])
         }
@@ -55,32 +54,45 @@ function addPerson(room, person) {
         }
         var poly = L.polygon(polygonPoints);
         var m = randomPointInPoly(poly);
-        var icon;
+        var icon, color_class;
         switch (person.type) {
             case "PENSIONNAIRE":
                 icon = "blind";
+                color_class = "  t_" + person.type;
+                // noinspection EqualityComparisonWithCoercionJS
+                if (room.isInterdite == 1) {
+                    icon = "exclamation-triangle iconA fa-beat";
+                    color_class = "alert_a ";
+                }
                 break;
             case "RESIDENT":
                 icon = "user-md";
+                color_class = "  t_" + person.type;
                 break;
             case "EMPLOYEE" :
                 icon = "male";
+                color_class = "  t_" + person.type;
                 break
         }
+
         var customPin = L.divIcon({
             className: 'location-pin',
             html: "<div style='text-align: center' style='width: auto'> " +
-                "<i class='fas   fa-3x iconM fa-" + icon + "  t_" + person.type + "'></i>" +
+                "<i class='fas fa-3x iconM fa-" + icon + " " + color_class + "'></i>" +
                 "<br>"
-                + "<span  class='text-small t_" + person.type + "' ><small>" + fullname + "</small></span></div>"
+                + "<span  class='text-small " + color_class + "' ><small>" + fullname + "</small></span></div>"
             , iconSize: [100, 50],
             iconAnchor: [20, 20],
-            popupAnchor: [3, -21],
+            popupAnchor: [27, -21],
         });
         var marker = L.marker(m.geometry.coordinates, {
             icon: customPin
         }).addTo(map);
-        marker.bindPopup("<b style='font-size:12pt;'> " + fullname + " </b> ");
+        var mPopup = "<h6>" + fullname + "</h6>" +
+            "<span><b>chambre : </b>" + room.nom + "</span>";
+        marker.bindPopup(mPopup);
+
+
         marker.on('mouseover', function (ev) {
             ev.target.openPopup();
         });
@@ -92,10 +104,10 @@ function addPerson(room, person) {
 
 function randomPointInPoly(polygon) {
     var bounds = polygon.getBounds();
-    var x_min = bounds.getEast() + 10;
-    var x_max = bounds.getWest() - 10;
-    var y_min = bounds.getSouth() - 10;
-    var y_max = bounds.getNorth() + 10;
+    var x_min = bounds.getEast() + 20;
+    var x_max = bounds.getWest() - 20;
+    var y_min = bounds.getSouth() - 20;
+    var y_max = bounds.getNorth() + 20;
 
     var lat = y_min + (Math.random() * (y_max - y_min));
     var lng = x_min + (Math.random() * (x_max - x_min));
@@ -111,6 +123,10 @@ function randomPointInPoly(polygon) {
     }
 }
 
+function showAlertNotification(person, room) {
+    toastr.error('Le pensionnaire <b>' + person.firstname + " " + person.lastname + "</b>,a acceder a la chambre <b>" + room.nom + "</b>!", 'Alerte!')
+}
+
 if ("WebSocket" in window) {
     // Let us open a web socket
     var ws = new WebSocket("ws://localhost:8090");
@@ -118,13 +134,20 @@ if ("WebSocket" in window) {
     ws.onopen = function () {
         // Web Socket is connected
         console.info("Connection is opened...");
+        $('body').click()
     };
 
     ws.onmessage = function (evt) {
         var received_msg = evt.data;
         received_msg = JSON.parse(received_msg);
-
-        addPerson(chambres_list[received_msg.room - 1], received_msg.person[0])
+        // noinspection EqualityComparisonWithCoercionJS
+        if (received_msg.type == "position") {
+            addPerson(chambres_list[received_msg.room - 1], received_msg.person);
+        } else
+        // noinspection EqualityComparisonWithCoercionJS
+        if (received_msg.type == "alert") {
+            showAlertNotification(received_msg.person, chambres_list[received_msg.room - 1]);
+        }
     };
 
     ws.onclose = function () {

@@ -2,17 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AlerteEvent;
 use App\Models\Alert;
+use App\Models\Person;
 use App\Models\Piece;
 use App\Models\Point;
 use App\Models\Seance;
-use App\Models\Trilateration;
-use DateInterval;
 use DateTime;
 
 
 class EventsController extends Controller
 {
+
+private $allRooms;
+
+    /**
+     * EventsController constructor.
+     */
+    public function __construct()
+    {
+        $this->allRooms = Piece::all();
+    }
+
     public function alertsIndex()
     {
         $alerts = Alert::all();
@@ -33,13 +44,15 @@ class EventsController extends Controller
         return view('events.special_events.special_events');
     }
 
+    private static $personsOldPosition = [];
 
     public function onNewEvent($event, $callback)
     {
-
         if ($event->idRelai != null && $event->data != null) {
             $chambreId = $event->idRelai;
             $personUUID = $event->data->iBeacon->uuid;
+            $person = Person::where("uid_bracelet", "=", $personUUID)->get();
+            $person = $person[0];
             $lastEvents = [];
             if (array_key_exists($personUUID, EventsController::$last_events))
                 $lastEvents = $this->getLastEvents($event);
@@ -64,13 +77,19 @@ class EventsController extends Controller
             }
 
 
-            $callback($personUUID, $nearestRoom);
-            $hasAccess = $this->checkAccesRight($personUUID, $nearestRoom);
-            if (!$hasAccess) {
-                $this->declancherAlerte($personUUID);
-            }
-            $this->saveEvent($event, $nearestRoom);
+            $callback($person, $nearestRoom,null);
 
+            if (!array_key_exists($person->id, EventsController::$personsOldPosition) || EventsController::$personsOldPosition[$person->id] != $nearestRoom) {
+                $hasAccess = $this->hasRight($person, $nearestRoom);
+                if (!$hasAccess) {
+                    $alert =[$person,$nearestRoom];
+                    $callback($person, $nearestRoom,$alert);
+                    $this->declancherAlerte($person, $nearestRoom);
+                }
+            }
+
+            $this->saveEvent($event, $nearestRoom);
+            EventsController::$personsOldPosition[$person->id] = $nearestRoom;
         }
     }
 
@@ -177,10 +196,10 @@ class EventsController extends Controller
 
     private function identifyRoomByTrilateration($last2Events, $event)
     {
-        $room1 = Piece::find($last2Events[0]->idRelai);
-        $room2 = Piece::find($last2Events[1]->idRelai);
+        $room1 = $this->allRooms[$last2Events[0]->idRelai-1];
+        $room2 = $this->allRooms[$last2Events[1]->idRelai-1];
 
-        $room3 = Piece::find($event->idRelai);
+        $room3 = $this->allRooms[$event->idRelai-1];
 
         $x1 = json_decode($room1->data)->x;
         $x2 = json_decode($room2->data)->x;
@@ -233,13 +252,16 @@ class EventsController extends Controller
         return [$x, $y];
     }
 
-    private function checkAccesRight($personUUID, $nearestRoom)
+    private function hasRight($person, $nearestRoom)
     {
-        /*  $room = Piece::find($nearestRoom);
-          $person = Person::where("uid_bracelet", "=", $personUUID);*/
-
-        return true /*!($room->isInterdite == 1 && $person->type == "PENSIONNAIRE")*/
-            ;
+        if ($person->type == "PENSIONNAIRE") {
+            $room = $this->allRooms[$nearestRoom-1];
+            if ($room->isInterdite == 1)
+                return false;
+            else
+                return true;
+        } else
+            return true;
     }
 
     private function getRoomByPoint($x, $y)
@@ -293,15 +315,9 @@ class EventsController extends Controller
         return $oddNodes;
     }
 
-    private function declancherAlerte($personUUID)
+    private function declancherAlerte($person, $room)
     {
-        //todo declancher evenement alerte
-    }
-
-    private function publishPosition($personUUID, $nearestRoom)
-    {
-
-
+        event(new AlerteEvent($person, $room));
     }
 
     private function resultContains(array $result, $event)

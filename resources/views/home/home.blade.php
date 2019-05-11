@@ -25,10 +25,15 @@
             </div>
         </div>
     </div>
+    <audio id="soundHandle"  style="display: none;">
+        <source src="/buzzer.mp3" type="audio/mpeg">
+    </audio>
+
 @stop
 
 @section('js')
     <script src='https://unpkg.com/@turf/turf'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js'></script>
 
     <script src="./leaflet/leaflet.js"></script>
     <script>
@@ -53,6 +58,11 @@
             },
             @endforeach
         ]
+
+
+
+
+
     </script>
     <script src="./js/home.js"></script>
 @stop

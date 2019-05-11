@@ -64,3 +64,11 @@
 
 .custom-switch-input:focus ~ .danger-custom-switch-indicator {
     border-color: #dc3545; }
+
+.rooms-list {
+    overflow-y: auto;
+}
+.is-soins {background-color: rgba(103, 119, 239, 0.33)}
+.is-interdite {background-color: rgba(191, 46, 46, 0.33)
+}
+.tr_selected {background-color: #6777ef !important;}

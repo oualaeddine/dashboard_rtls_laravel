@@ -22,10 +22,18 @@
 .iconM {
     font-size: 1.8em;
 }
+.iconA {
+    font-size: 2em;
+}
 
 .t_PENSIONNAIRE {
     fill: #fd7e14;
     color: #fd7e14;
+}
+
+.alert_a {
+    fill: #dc3545;
+    color: #dc3545;
 }
 
 .t_RESIDENT {
@@ -46,4 +54,46 @@
 .my-label {
     position: absolute;
     font-size: 10px;
+}
+
+
+
+.fa-beat {
+    -webkit-animation: fa-beat 1s infinite linear;
+    animation: fa-beat 1s infinite linear;
+}
+@-webkit-keyframes fa-beat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes fa-beat {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+}
+
+
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: rgba(233, 52, 52, 0);
+    box-shadow: 0 0 0  rgba(233, 52, 52, 0);;
 }

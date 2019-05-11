@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpComposerExtensionStubsInspection */
 
 namespace App\Http\Controllers;
 
@@ -59,18 +59,15 @@ class WebSocketController extends Controller implements MessageComponentInterfac
     {
         /** @noinspection PhpComposerExtensionStubsInspection */
         $event = json_decode($msg);
-        (new EventsController)->onNewEvent($event, function ($uuid, $roomId) {
-
-            echo " uuid : " . $uuid . " room : " . $roomId . "\n";
-
-            $person = Person::where("uid_bracelet", "=", $uuid)->get();
-
-
-            $res = json_encode(["person" => $person, "room" => $roomId]);
-
+        (new EventsController)->onNewEvent($event, function ($person, $roomId,$alert) {
+            $res = json_encode(["person" => $person, "room" => $roomId,"type"=>"position"]);
+            echo $res."\n";
             foreach ($this->clients as $client) {
                 // The sender is not the receiver, send to each client connected
                 $client->send($res);
+                if ($alert != null) {
+                    $client->send(json_encode(["person" => $person, "room" => $roomId,"type"=>"alert"]));
+                }
             }
         });
     }
