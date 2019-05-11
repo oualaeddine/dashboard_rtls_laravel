@@ -41,7 +41,7 @@ class EndSeanceEventListener
 
         foreach ($seances as $seance) {
             $seance->end_date = date("Y-m-d H:i:s", $timestamp);
-            $seance->save();
+          //  $seance->save();
         }
 
     }
