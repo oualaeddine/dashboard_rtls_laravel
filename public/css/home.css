@@ -1,0 +1,49 @@
+
+.chambre {
+
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.chambre:hover {
+    fill: #f2f2f2;
+}
+
+.person {
+    /*   height: 1.5em;
+       font-size: 3em;
+       width: 0.7em;*/
+
+}
+
+.iconM {
+    font-size: 1.8em;
+}
+
+.t_PENSIONNAIRE {
+    fill: #fd7e14;
+    color: #fd7e14;
+}
+
+.t_RESIDENT {
+    fill: #3abaf4;
+    color: #3abaf4;
+}
+
+.t_EMPLOYEE {
+    fill: #6c757d;;
+    color: #6c757d;;
+}
+
+#mapid {
+    height: 600px;
+    background: white;
+}
+
+.my-label {
+    position: absolute;
+    font-size: 10px;
+}

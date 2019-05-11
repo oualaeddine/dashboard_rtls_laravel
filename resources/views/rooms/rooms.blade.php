@@ -829,7 +829,7 @@
                 <div class="card-body p-0 rooms-list">
                     <div class="scroll">
                         <div class="table-responsive">
-                            <table class="table table-responsive table-md">
+                            <table class="table table-md">
                                 <tbody>
                                 @foreach($rooms as $r)
                                     <tr id="tr_{{$loop->iteration}}"
@@ -846,7 +846,7 @@
                                                data-is_soins="{{$r->type == \App\Enums\PieceTypes::SOINS}}"
                                                data-remodal-target="room-edit"
                                                data-toggle="tooltip"
-                                               data-original-title="Modifier">info</a>
+                                               data-original-title="Modifier le nom et le type de la piece">Modifier</a>
                                         </td>
                                     </tr>
                                 @endforeach

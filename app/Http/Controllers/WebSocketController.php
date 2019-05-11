@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Person;
 use Illuminate\Http\Request;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 class WebSocketController extends Controller implements MessageComponentInterface
 {
-    private $connections = [];
+    protected $clients;
+
+    public function __construct()
+    {
+        $this->clients = new \SplObjectStorage;
+    }
 
     /**
      * When a new connection is opened it will be passed to this method
@@ -17,6 +23,7 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      */
     function onOpen(ConnectionInterface $conn)
     {
+        $this->clients->attach($conn);
     }
 
     /**
@@ -26,7 +33,7 @@ class WebSocketController extends Controller implements MessageComponentInterfac
      */
     function onClose(ConnectionInterface $conn)
     {
-
+        $this->clients->detach($conn);
     }
 
     /**
@@ -54,7 +61,17 @@ class WebSocketController extends Controller implements MessageComponentInterfac
         $event = json_decode($msg);
         (new EventsController)->onNewEvent($event, function ($uuid, $roomId) {
 
-            echo " uuid : " . $uuid . " room : " . $roomId."\n";
+            echo " uuid : " . $uuid . " room : " . $roomId . "\n";
+
+            $person = Person::where("uid_bracelet", "=", $uuid)->get();
+
+
+            $res = json_encode(["person" => $person, "room" => $roomId]);
+
+            foreach ($this->clients as $client) {
+                // The sender is not the receiver, send to each client connected
+                $client->send($res);
+            }
         });
     }
 }

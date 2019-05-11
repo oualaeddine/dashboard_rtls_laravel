@@ -9,14 +9,16 @@ use Illuminate\Http\Request;
 
 class RoomsController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
-        $rooms =Piece::all();
+        $rooms = Piece::all();
         return view('rooms.rooms')
             ->with('rooms', $rooms);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $requestData = $request->all();
 
@@ -24,19 +26,18 @@ class RoomsController extends Controller
         return redirect()->back();
     }
 
-    public function update(EditRoomRequest $request) {
+    public function update(EditRoomRequest $request)
+    {
 
 //        dd($request->all());
         $requestData = $request->only(['name', 'data']);
 
-        if($request->has('is_soins')) {
+        if ($request->has('is_soins')) {
             $requestData = array_merge($requestData, ['type' => PieceTypes::SOINS]);
-        }
-        else {
-            if($request->has('is_interdite')) {
+        } else {
+            if ($request->has('is_interdite')) {
                 $requestData = array_merge($requestData, ['type' => PieceTypes::INTERDITE]);
-            }
-            else {
+            } else {
                 $requestData = array_merge($requestData, ['type' => PieceTypes::NORMAL]);
             }
         }
@@ -52,7 +53,8 @@ class RoomsController extends Controller
         return redirect()->back()->withSuccess($success);
     }
 
-    public function delete(Request $request) {
+    public function delete(Request $request)
+    {
 
         return redirect()->back();
     }

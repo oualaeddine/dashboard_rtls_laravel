@@ -97,7 +97,7 @@ class EventsController extends Controller
         try {
             foreach ($events as $event) {
                 $mTime = new DateTime($event->date);
-                $mt = $mTime->getTimestamp() - 700;
+                $mt = $mTime->getTimestamp() - 200;
                 $mTime = $mTime->getTimestamp();
                 if ($event->idRelai != $rId)
                     if (!$this->resultContains($result, $event))

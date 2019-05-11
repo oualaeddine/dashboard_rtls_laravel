@@ -36,17 +36,17 @@
             <li>
                 <a class="nav-link nav-link text-danger" href="{{route('events.alerts')}}">
                     <i class="fas fa-bell"></i>
-                    <span>Alerts</span>
+                    <span>Alertes</span>
                 </a>
             </li>
-            <li>
+           {{-- <li>
                 <a class="nav-link" href="{{route('events.seances')}}">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Séances</span>
                 </a>
-            </li>
+            </li>--}}
             <li>
-                <a class="nav-link text-info" href="{{route('specials')}}">
+                <a class="nav-link text-info" href="{{route('events.seances')}}">
                     <i class="fas fa-stethoscope"></i>
                     <span>Seances de soins</span>
                 </a>

@@ -3,19 +3,24 @@
 @section('title', 'Les évenements')
 
 @section('page_title')
-    <h1>Les évenements</h1>
+    <h1 class="text-danger"> Alertes</h1>
 @stop
 
 @section('css')
-
+<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(255, 0, 0, 0.05);
+    }
+    .table:not(.table-sm) thead th {
+        background-color: rgba(255, 0, 0,0.2);
+    }
+</style>
 @stop
 
 @section('content')
     {{--Start Alerts Table--}}
-    <div class="card">
-        <div class="card-header">
-            alertes
-        </div>
+    <div class="card card-danger">
+
         <div class="card-body">
             <table id="table_id" class="table table-striped w-100">
                 <thead>
