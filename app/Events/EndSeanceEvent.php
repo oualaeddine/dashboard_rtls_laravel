@@ -13,7 +13,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class EndSeanceEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    private $personId;
+    public $personId;
 
     /**
      * Create a new event instance.

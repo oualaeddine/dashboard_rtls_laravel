@@ -31,8 +31,8 @@ class AlerteListener
 
         $alert->person_id = $event->person->id;
         $alert->piece_id = $event->roomId;
-        $timestamp = time();
 
+        $timestamp = time();
         $alert->date_time = date("Y-m-d H:i:s", $timestamp);
 
         $alert->save();

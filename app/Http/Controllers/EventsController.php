@@ -57,28 +57,23 @@ class EventsController extends Controller
             $lastEvents = [];
             if (array_key_exists($personUUID, EventsController::$last_events))
                 $lastEvents = $this->getLastEvents($event);
-
             if (count($lastEvents) == 0 || count($lastEvents) == 0) {
                 $nearestRoom = $chambreId;
             } else {
                 if (count($lastEvents) == 1) {
                     $d1 = $this->calculateDistance($lastEvents[0]);
                     $d2 = $this->calculateDistance($event);
-
                     if ($d1 > $d2)
                         $nearestRoom = $chambreId;
                     else
                         $nearestRoom = $lastEvents[0]->idRelai;
-
                 } else {
                     $lastEvents = $this->sortEventsByDistance($lastEvents);
                     $last2Events = $this->pick2nearestRelays($lastEvents);
                     $nearestRoom = $this->identifyRoomByTrilateration($last2Events, $event);
                 }
             }
-
             $callback($person, $nearestRoom, null);
-
             if (!array_key_exists($person->id, EventsController::$personsOldPosition) || EventsController::$personsOldPosition[$person->id] != $nearestRoom) {
                 $hasAccess = $this->hasRight($person, $nearestRoom);
                 if (!$hasAccess) {
@@ -87,10 +82,7 @@ class EventsController extends Controller
                     $this->declancherAlerte($person, $nearestRoom);
                 }
             }
-
-
             $this->checkSeance($person, $this->allRooms[$nearestRoom - 1]);
-
             $this->saveEvent($event, $nearestRoom);
             EventsController::$personsOldPosition[$person->id] = $nearestRoom;
         }

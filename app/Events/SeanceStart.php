@@ -13,8 +13,8 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class SeanceStart
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    private $pensionnaire;
-    private $resident;
+    public $pensionnaire;
+    public $resident;
 
     /**
      * Create a new event instance.
