@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Person;
-use Illuminate\Http\Request;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 class WebSocketController extends Controller implements MessageComponentInterface
 {
     protected $clients;
+    private $mEventsController;
 
     public function __construct()
     {
         $this->clients = new \SplObjectStorage;
+        $this->mEventsController = new EventsController();
     }
 
     /**
@@ -59,11 +59,9 @@ class WebSocketController extends Controller implements MessageComponentInterfac
     {
         /** @noinspection PhpComposerExtensionStubsInspection */
         $event = json_decode($msg);
-        (new EventsController)->onNewEvent($event, function ($person, $roomId,$alert) {
+        $this->mEventsController->onNewEvent($event, function ($person, $roomId,$alert) {
             $res = json_encode(["person" => $person, "room" => $roomId,"type"=>"position"]);
-            echo $res."\n";
             foreach ($this->clients as $client) {
-                // The sender is not the receiver, send to each client connected
                 $client->send($res);
                 if ($alert != null) {
                     $client->send(json_encode(["person" => $person, "room" => $roomId,"type"=>"alert"]));

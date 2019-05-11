@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Events\AlerteEvent;
+use App\Events\EndSeanceEvent;
+use App\Events\SeanceStart;
 use App\Models\Alert;
 use App\Models\Person;
 use App\Models\Piece;
@@ -14,7 +16,7 @@ use DateTime;
 class EventsController extends Controller
 {
 
-private $allRooms;
+    private $allRooms;
 
     /**
      * EventsController constructor.
@@ -33,7 +35,6 @@ private $allRooms;
 
     public function seancesIndex()
     {
-        $alerts = Alert::all();
         $seances = Seance::all();
         return view('events.events.seances')
             ->with('seances', $seances);
@@ -76,17 +77,19 @@ private $allRooms;
                 }
             }
 
-
-            $callback($person, $nearestRoom,null);
+            $callback($person, $nearestRoom, null);
 
             if (!array_key_exists($person->id, EventsController::$personsOldPosition) || EventsController::$personsOldPosition[$person->id] != $nearestRoom) {
                 $hasAccess = $this->hasRight($person, $nearestRoom);
                 if (!$hasAccess) {
-                    $alert =[$person,$nearestRoom];
-                    $callback($person, $nearestRoom,$alert);
+                    $alert = [$person, $nearestRoom];
+                    $callback($person, $nearestRoom, $alert);
                     $this->declancherAlerte($person, $nearestRoom);
                 }
             }
+
+
+            $this->checkSeance($person, $this->allRooms[$nearestRoom - 1]);
 
             $this->saveEvent($event, $nearestRoom);
             EventsController::$personsOldPosition[$person->id] = $nearestRoom;
@@ -196,10 +199,10 @@ private $allRooms;
 
     private function identifyRoomByTrilateration($last2Events, $event)
     {
-        $room1 = $this->allRooms[$last2Events[0]->idRelai-1];
-        $room2 = $this->allRooms[$last2Events[1]->idRelai-1];
+        $room1 = $this->allRooms[$last2Events[0]->idRelai - 1];
+        $room2 = $this->allRooms[$last2Events[1]->idRelai - 1];
 
-        $room3 = $this->allRooms[$event->idRelai-1];
+        $room3 = $this->allRooms[$event->idRelai - 1];
 
         $x1 = json_decode($room1->data)->x;
         $x2 = json_decode($room2->data)->x;
@@ -255,7 +258,7 @@ private $allRooms;
     private function hasRight($person, $nearestRoom)
     {
         if ($person->type == "PENSIONNAIRE") {
-            $room = $this->allRooms[$nearestRoom-1];
+            $room = $this->allRooms[$nearestRoom - 1];
             if ($room->isInterdite == 1)
                 return false;
             else
@@ -326,5 +329,76 @@ private $allRooms;
             if ($res->idRelai == $event->idRelai) return true;
         }
         return false;
+    }
+
+    private $seances = [];
+
+    private function checkSeance($person, $room)
+    {
+        if ($room->type == "SOINS")
+            if ($person->type == "PENSIONNAIRE") {
+                $pensionnaire = $person->id;
+                $resident = $this->getResidentInRoom($room->id);
+                if ($resident != 0)
+                    if ($this->isNewSeance($pensionnaire, $resident)) {
+                        $this->seances[] = ["pensionnaire" => $pensionnaire, "resident" => $resident];
+                        event(new  SeanceStart($pensionnaire, $resident));
+                    }
+            }
+        if ($room->type != "SOINS")
+            if ($person->type == "PENSIONNAIRE")
+                if ($this->wasInSeance($person->id)) {
+                    unset($this->seances[$this->getSeanceIndex($person->id)]);
+                    event(new EndSeanceEvent($person->id));
+                }
+    }
+
+    private function getResidentInRoom($id)
+    {
+        foreach (EventsController::$last_events as $person) {
+            $key = array_search($person, EventsController::$last_events);
+            $last_index = EventsController::$person_last_index[$key];
+            $mTime = new DateTime(EventsController::$last_events[$last_index]->date);
+            $mt = $mTime->getTimestamp() - 500;
+            $mTime = $mTime->getTimestamp();
+            if ($mt < $mTime)
+                if ($id == EventsController::$last_events[$last_index]->actualRoom) {
+                    $person = Person::where("uid_bracelet", "=", $key)->get();
+                    if ($person->type == "RESIDENT")
+                        return $person->id;
+                }
+        }
+        return 0;
+    }
+
+    private function isNewSeance($id, $resident)
+    {
+        foreach ($this->seances as $seance) {
+            if ($seance["pensionnaire"] == $id && $seance["resident"] == $resident) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private function wasInSeance($id)
+    {
+        foreach ($this->seances as $seance) {
+            if ($seance["pensionnaire"] == $id || $seance["resident"] == $id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function getSeanceIndex($id)
+    {
+        for ($i = 0; $i < count($this->seances); $i++) {
+            $seance = $this->seances[$i];
+            if ($seance["pensionnaire"] == $id || $seance["resident"] == $id) {
+                return $i;
+            }
+        }
+        return 99999999;
     }
 }
