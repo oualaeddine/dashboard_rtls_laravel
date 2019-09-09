@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         factory(\App\Models\Piece::class, 32)->create();
         factory(\App\Models\Alert::class, 100)->create();
         factory(\App\Models\Seance::class, 100)->create();
+        $this->call(RoomsSeeder::class);
+
     }
 }

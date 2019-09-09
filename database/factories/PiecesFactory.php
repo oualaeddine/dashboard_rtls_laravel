@@ -6,10 +6,10 @@ use App\Models\Piece;
 use Faker\Generator as Faker;
 
 $factory->define(Piece::class, function (Faker $faker) {
-    return [
+/*    return [
         'cart_id' => rand(10000, 9999999),
         'name' => $faker->sentence(3),
         'type' => \App\Enums\PieceTypes::getRandomValue(),
         'isInterdite' => rand(0,1) == 1,
-    ];
+    ];*/
 });

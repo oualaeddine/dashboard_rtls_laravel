@@ -38,13 +38,6 @@ class AdminsController extends Controller
         $id = $request->id;
         $admin = Admin::find($id);
         $requestData = $request->all();
-
-        if($request->password == null) {
-            $requestData['password'] = $admin->password;
-        } else {
-            $requestData['password'] = bcrypt($request->password);
-        }
-
         unset($requestData['id']);
 
         $admin->update($requestData);
