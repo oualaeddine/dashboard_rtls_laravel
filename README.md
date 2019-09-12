@@ -17,3 +17,11 @@ __apres ça on configure notre projet:__
 * installer le service du websocket
 
 __l'appli est prete a etre utilisé!__
+
+
+
+__configuration supervisor:__
+* copy rtls-websocket.conf to /etc/supervisor/conf.d
+* sudo supervisorctl reread
+* sudo supervisorctl update
+* sudo supervisorctl start rtls-websocket:*
