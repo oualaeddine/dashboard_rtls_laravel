@@ -129,7 +129,7 @@ function showAlertNotification(person, room) {
 
 if ("WebSocket" in window) {
     // Let us open a web socket
-    var ws = new WebSocket("ws://localhost:8090");
+    var ws = new WebSocket("ws://79.137.78.86:8090");
 
     ws.onopen = function () {
         // Web Socket is connected
