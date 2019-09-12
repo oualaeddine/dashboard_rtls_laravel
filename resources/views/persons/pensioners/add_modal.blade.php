@@ -1,6 +1,6 @@
 <div class="remodal" data-remodal-id="add-pensioner" id="add-pensioner">
     <button data-remodal-action="close" class="remodal-close"></button>
-    <h1>Ajouter un  Pensionnair</h1>
+    <h1>Ajouter un  Pensionnaire</h1>
     <br>
     <form method="POST" action="{{route('pensioners.add')}}" class="needs-validation" novalidate="">
         @csrf

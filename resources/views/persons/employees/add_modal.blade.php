@@ -1,6 +1,6 @@
 <div class="remodal" data-remodal-id="add-employee" id="add-employee">
     <button data-remodal-action="close" class="remodal-close"></button>
-    <h1>Ajouter un employée</h1>
+    <h1>Ajouter un employé</h1>
     <br>
     <form method="POST" action="{{route('employees.add')}}" class="needs-validation" novalidate="">
         @csrf

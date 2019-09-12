@@ -41,7 +41,7 @@
                                    name="is_interdite"
                                    class="custom-switch-input is-interdite">
                             <span class="danger-custom-switch-indicator" ></span>
-                            <span class="custom-switch-description">Cette chambre est interdite aux pensionaires</span>
+                            <span class="custom-switch-description">Cette chambre est interdite aux Pensionnaires</span>
                         </label>
                     </div>
                     <br>

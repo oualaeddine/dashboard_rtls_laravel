@@ -3,7 +3,7 @@
 @section('title', 'Les évenements')
 
 @section('page_title')
-    <h1>Les évenements</h1>
+    <h1>Les évènements </h1>
 @stop
 
 @section('css')
@@ -52,8 +52,8 @@
                 <tr>
                     <th>#</th>
                     <th data-priority="2">Résident</th>
-                    <th data-priority="3">Pensionaire</th>
-                    <th>Date de démmarage</th>
+                    <th data-priority="3">Pensionnaire</th>
+                    <th>Date de démarrage</th>
                     <th>Date de fin</th>
                     <th>Durée</th>
                 </tr>

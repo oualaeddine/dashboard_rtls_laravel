@@ -1,6 +1,6 @@
 <div class="remodal" data-remodal-id="edit-pensioner" id="edit-pensioner">
     <button data-remodal-action="close" class="remodal-close"></button>
-    <h1>Modifier le Pensionnair</h1>
+    <h1>Modifier le Pensionnaire</h1>
     <br>
     <form method="POST" action="{{route('pensioners.update')}}" class="needs-validation" novalidate="">
         @csrf

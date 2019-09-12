@@ -3,12 +3,12 @@
 @section('title', 'Pensionnaires')
 
 @section('page_title')
-    <h1>Gestion des Pensionnaires</h1>
+    <h1>Gestion des Pensionnaires </h1>
 @stop
 @section('action_btn')
     <button class="btn btn-primary float-right"
             data-remodal-target="add-pensioner">
-        <i class="fas fa-user-plus"></i> Ajouter un  Pensionnair
+        <i class="fas fa-user-plus"></i> Ajouter un  pensionnaire
     </button>
 @stop
 
@@ -156,7 +156,7 @@
 
                 $.confirm({
                     type: 'red',
-                    title: '<h6>Voulez vous vraiment supprimer cet  Pensionnair</h6>',
+                    title: '<h6>Voulez vous vraiment supprimer cet  Pensionnaire</h6>',
                     content: '<form id="delete-pensioner" method="post" action="{{route('pensioners.delete')}}">'
                         + '{{csrf_field()}}'
                         + '<input type="hidden" name="_method" value="delete" />'

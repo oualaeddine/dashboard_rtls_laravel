@@ -4,7 +4,7 @@
 @section('title', 'Profile')
 
 @section('page_title')
-    <h1>Profile</h1>
+    <h1>Profil</h1>
 @stop
 
 @section('css')
@@ -53,7 +53,7 @@
                             {{--<span class="float-right">{{$admin->username}}</span>--}}
                         {{--</li>--}}
                         <li class="list-group-item">
-                            <b>Mot de pass</b>
+                            <b>Mot de passe</b>
                             <span class="float-right">*************</span>
                             <span class="btn btn-sm btn-light float-right mr-2"
                                   data-remodal-target="edit-password">Changer</span>

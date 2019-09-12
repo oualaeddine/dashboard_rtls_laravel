@@ -1,6 +1,6 @@
 <div class="remodal" data-remodal-id="edit-employee" id="edit-employee">
     <button data-remodal-action="close" class="remodal-close"></button>
-    <h1>Modifier l'employée</h1>
+    <h1>Modifier l'employé</h1>
     <br>
     <form method="POST" action="{{route('employees.update')}}" class="needs-validation" novalidate="">
         @csrf
@@ -18,7 +18,6 @@
                         </div>
                         <input name="firstname"
                                type="text"
-                               name="firstname"
                                pattern="[a-zA-Z ]+$"
                                required
                                minlength="4"

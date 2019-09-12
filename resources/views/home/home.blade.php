@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <div id="mapid"></div>
 
-                    <span class="text-warning"><small><strong>NB: la position affichée sur le plan n'indique pas la position exacte de la personne, elle indique la presence d'une personne dans une chambre.</strong></small></span>
+                    <span class="text-warning"><small><strong>NB: la position affichée sur le plan n'indique pas la position exacte de la personne, elle indique la présence d'une personne dans une chambre.</strong></small></span>
                   {{--  <button onclick="ajouterPersonne(0,0)"> Ajouter pensionaire salle 115</button>
                     <button onclick="ajouterPersonne(1,0)">Ajouter resident salle 115</button>
                     <button onclick="ajouterPersonne(2,0)">Ajouter employé salle 115</button>--}}

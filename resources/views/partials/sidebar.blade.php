@@ -48,7 +48,7 @@
             <li>
                 <a class="nav-link text-info" href="{{route('events.seances')}}">
                     <i class="fas fa-stethoscope"></i>
-                    <span>Seances de soins</span>
+                    <span>Séances de soins</span>
                 </a>
             </li>
 
@@ -56,20 +56,20 @@
             <li>
                 <a class="nav-link" href="{{route('profile')}}">
                     <i class="fas fa-user"></i>
-                    <span>Profile</span>
+                    <span>Profil</span>
                 </a>
             </li>
             <li>
                 <a class="nav-link" href="{{route('admins')}}">
                     <i class="fas fa-chalkboard-teacher"></i>
-                    <span> Géestion des admins</span>
+                    <span> Géstion des admins</span>
                 </a>
             </li>
 
             <li>
                 <a class="nav-link" href="{{route('rooms')}}">
                     <i class="fas fa-hotel"></i>
-                    <span> Géestion des pieces</span>
+                    <span> Géstion des pièces</span>
                 </a>
             </li>
            {{-- <li>
