@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <input name="uid_bracelet"
-                               type="number"
+                               type="text"
                                required
                                class="form-control uid_bracelet">
                     </div>

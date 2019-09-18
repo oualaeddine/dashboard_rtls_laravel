@@ -29,7 +29,6 @@ class EditPersonRequest extends FormRequest
             'lastname' => 'required',
             'uid_bracelet' => [
                 'required',
-                'numeric',
                 Rule::unique('persons', 'uid_bracelet')->ignore($this->id)
             ],
         ];
