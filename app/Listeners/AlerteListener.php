@@ -27,6 +27,7 @@ class AlerteListener
      */
     public function handle(AlerteEvent $event)
     {
+        echo "handeling alert event!";
         $alert = new Alert();
 
         $alert->person_id = $event->person->id;
