@@ -238,11 +238,14 @@ function updateList() {
     if (selectedRoom != null) {
         for (let i = 0; i < roomsPersons[selectedRoom - 1].length; i++) {
             let person = roomsPersons[selectedRoom - 1][i];
-
+            let mclass= "";
+            if (person.type=="EMPLOYEE") mclass = "t_EMPLOYEE";
+            if (person.type=="PENSIONNAIRE ") mclass = "t_PENSIONNAIRE";
+            if (person.type=="RESIDENT") mclass = "t_RESIDENT";
             pp = pp +
-                "<tr id='tr_" + person.id + "' class=''  onmouseover='showSelectedRoom(" + (selectedRoom) + ")'>" +
-                "      <td>" + person.name + "</td>\n" +
-                "      <td>" + chambres_list[selectedRoom - 1].nom + "</td>\n" +
+                "<tr id='tr_" + person.id + "' class='"+mclass+"'   onmouseover='showSelectedRoom(" + (selectedRoom) + ")'>" +
+                "      <td>" + person.lastname +person.firstname + "</td>" +
+                "      <td>" + chambres_list[selectedRoom - 1].nom + "</td>" +
                 "</tr>"
         }
     }
@@ -250,9 +253,13 @@ function updateList() {
         for (let j = 0; j < roomsPersons.length; j++) {
             for (let i = 0; i < roomsPersons[j].length; i++) {
                 let person = roomsPersons[j][i];
+                let mclass= "";
+                if (person.type=="EMPLOYEE") mclass = "t_EMPLOYEE";
+                if (person.type=="PENSIONNAIRE ") mclass = "t_PENSIONNAIRE";
+                if (person.type=="RESIDENT") mclass = "t_RESIDENT";
                 pp = pp +
-                    "<tr id='tr_" + person.id + "' class=''  onmouseover='showSelectedRoom(" + (j + 1) + ")'>" +
-                    "      <td>" + person.name + "</td>\n" +
+                    "<tr id='tr_" + person.id + "' class='"+mclass+"'  onmouseover='showSelectedRoom(" + (j + 1) + ")'>" +
+                    "      <td>" + person.lastname +person.firstname + "</td>\n" +
                     "      <td>" + chambres_list[j].nom + "</td>\n" +
                     "</tr>"
             }
@@ -427,7 +434,8 @@ if ("WebSocket" in window) {
         received_msg = JSON.parse(received_msg);
         // noinspection EqualityComparisonWithCoercionJS
         if (received_msg.type == "position") {
-            addPerson(chambres_list[received_msg.room], received_msg.person);
+            addPerson(received_msg.room, received_msg.person);
+            console.log(received_msg.person)
         } else
         // noinspection EqualityComparisonWithCoercionJS
         if (received_msg.type == "alert") {
