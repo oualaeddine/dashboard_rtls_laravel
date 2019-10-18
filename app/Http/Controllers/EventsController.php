@@ -120,7 +120,7 @@ class EventsController extends Controller
                             $result[] = $event;
             }
         } catch (\Exception $e) {
-            echo $event->date;
+            echo $event->date."\n";
             echo $e;
         }
         return $result;
