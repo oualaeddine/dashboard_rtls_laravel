@@ -110,8 +110,9 @@ class EventsController extends Controller
         $result = [];
         try {
             foreach ($events as $event) {
+                $mTime = new DateTime();
+                $mTime->setTimestamp(substr($event->date, 0, 10));
 
-                $mTime = new DateTime(substr($event->date,0,10));
                 $mt = $mTime->getTimestamp() - 200;
                 $mTime = $mTime->getTimestamp();
                 if ($event->idRelai != $rId)
