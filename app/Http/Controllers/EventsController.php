@@ -110,6 +110,7 @@ class EventsController extends Controller
         $result = [];
         try {
             foreach ($events as $event) {
+
                 $mTime = new DateTime($event->date);
                 $mt = $mTime->getTimestamp() - 200;
                 $mTime = $mTime->getTimestamp();
@@ -119,6 +120,7 @@ class EventsController extends Controller
                             $result[] = $event;
             }
         } catch (\Exception $e) {
+            echo $event->date;
             echo $e;
         }
         return $result;

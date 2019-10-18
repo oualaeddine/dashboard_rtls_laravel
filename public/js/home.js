@@ -361,7 +361,6 @@ function showAlertNotification(person, room) {
 
 function addPerson(room, person) {
     if (personExistsInRooms(person)) {
-        console.log("person " + person.id + " exists in room "+room);
         deleteFromAllRoomsExceptTheOne(person, room);
     } else {
         addPersonToRoom(person, room);
