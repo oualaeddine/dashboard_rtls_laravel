@@ -244,7 +244,7 @@ function updateList() {
             if (person.type=="RESIDENT") mclass = "t_RESIDENT";
             pp = pp +
                 "<tr id='tr_" + person.id + "' class='"+mclass+"'   onmouseover='showSelectedRoom(" + (selectedRoom) + ")'>" +
-                "      <td>" + person.lastname +person.firstname + "</td>" +
+                "      <td>" + person.lastname +" "+person.firstname + "</td>" +
                 "      <td>" + chambres_list[selectedRoom - 1].nom + "</td>" +
                 "</tr>"
         }
@@ -259,7 +259,7 @@ function updateList() {
                 if (person.type=="RESIDENT") mclass = "t_RESIDENT";
                 pp = pp +
                     "<tr id='tr_" + person.id + "' class='"+mclass+"'  onmouseover='showSelectedRoom(" + (j + 1) + ")'>" +
-                    "      <td>" + person.lastname +person.firstname + "</td>\n" +
+                    "      <td>" + person.lastname +" "+person.firstname + "</td>" +
                     "      <td>" + chambres_list[j].nom + "</td>\n" +
                     "</tr>"
             }
