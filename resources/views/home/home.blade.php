@@ -736,83 +736,115 @@
     </g>
 </g>
                         <g id="chambres">
-                            <rect onmouseover="chListHover(1)" onClick="chClicked(1)" id="ch_1" x="9.75" y="165.75" class="chambre" fill="none"
+                            <rect onmouseover="chListHover(1)" onClick="chClicked(1)" id="ch_1" x="9.75" y="165.75"
+                                  class="chambre" fill="none"
                                   width="63" height="127.5"/>
-                            <rect onmouseover="chListHover(2)" onClick="chClicked(2)" id="ch_2" class="chambre" x="75.5" y="204.25" fill="none"
+                            <rect onmouseover="chListHover(2)" onClick="chClicked(2)" id="ch_2" class="chambre" x="75.5"
+                                  y="204.25" fill="none"
                                   width="55" height="79.25"/>
-                            <rect onmouseover="chListHover(3)" onClick="chClicked(3)" id="ch_3" class="chambre" x="132" y="204" fill="none"
+                            <rect onmouseover="chListHover(3)" onClick="chClicked(3)" id="ch_3" class="chambre" x="132"
+                                  y="204" fill="none"
                                   width="59.75" height="81.5"/>
-                            <rect onmouseover="chListHover(4)" onClick="chClicked(4)" id="ch_4" class="chambre" x="193.5" y="203" fill="none"
+                            <rect onmouseover="chListHover(4)" onClick="chClicked(4)" id="ch_4" class="chambre"
+                                  x="193.5" y="203" fill="none"
                                   width="60.6667"
                                   height="81.3333"/>
-                            <polygon onmouseover="chListHover(5)" onClick="chClicked(5)" id="balcon_1" class="chambre" fill="none" points="74.5,165.6667 204.6667,165.3333 204.1667,108.8333 232,109.1667 233.3333,202.6667
+                            <polygon onmouseover="chListHover(5)" onClick="chClicked(5)" id="balcon_1" class="chambre"
+                                     fill="none" points="74.5,165.6667 204.6667,165.3333 204.1667,108.8333 232,109.1667 233.3333,202.6667
 		74.3333,203.6667 	"/>
-                            <rect onmouseover="chListHover(6)" onClick="chClicked(6)" id="ch_6" class="chambre" x="234.5" y="109" fill="none"
+                            <rect onmouseover="chListHover(6)" onClick="chClicked(6)" id="ch_6" class="chambre"
+                                  x="234.5" y="109" fill="none"
                                   width="61.5" height="93.5"/>
-                            <rect onmouseover="chListHover(7)" onClick="chClicked(7)" id="ch_7" class="chambre" x="297.5" y="108.8333"
+                            <rect onmouseover="chListHover(7)" onClick="chClicked(7)" id="ch_7" class="chambre"
+                                  x="297.5" y="108.8333"
                                   fill="none" width="56.25"
                                   height="92.6667"/>
-                            <polygon onmouseover="chListHover(8)" onClick="chClicked(8)" id="ch_8" class="chambre" fill="none" points="440.25,108.25 440,150.25 417.5,150.5 418.25,173.5 411.75,173.5 411.5,181.25 392.75,199
+                            <polygon onmouseover="chListHover(8)" onClick="chClicked(8)" id="ch_8" class="chambre"
+                                     fill="none" points="440.25,108.25 440,150.25 417.5,150.5 418.25,173.5 411.75,173.5 411.5,181.25 392.75,199
 		392.5,229.5 335.75,229.5 335.75,203.5 354.75,202.25 353.75,108.8333 	"/>
-                            <rect onmouseover="chListHover(9)" onClick="chClicked(9)" id="sejour" class="chambre" x="440.5" y="108" fill="none"
+                            <rect onmouseover="chListHover(9)" onClick="chClicked(9)" id="sejour" class="chambre"
+                                  x="440.5" y="108" fill="none"
                                   width="64.75"
                                   height="85.25"/>
-                            <rect onmouseover="chListHover(10)" onClick="chClicked(10)" id="ch_10" class="chambre" x="663" y="163.5" fill="none"
+                            <rect onmouseover="chListHover(10)" onClick="chClicked(10)" id="ch_10" class="chambre"
+                                  x="663" y="163.5" fill="none"
                                   width="67.5" height="129"/>
-                            <rect onmouseover="chListHover(11)" onClick="chClicked(11)" id="ch_11" class="chambre" x="604.5" y="205.5" fill="none"
+                            <rect onmouseover="chListHover(11)" onClick="chClicked(11)" id="ch_11" class="chambre"
+                                  x="604.5" y="205.5" fill="none"
                                   width="58.5" height="87"/>
-                            <rect onmouseover="chListHover(12)" onClick="chClicked(12)" id="ch_12" class="chambre" x="547.5" y="206.5" fill="none"
+                            <rect onmouseover="chListHover(12)" onClick="chClicked(12)" id="ch_12" class="chambre"
+                                  x="547.5" y="206.5" fill="none"
                                   width="57" height="86"/>
-                            <rect onmouseover="chListHover(13)" onClick="chClicked(13)" id="ch_13" class="chambre" x="492" y="207" fill="none"
+                            <rect onmouseover="chListHover(13)" onClick="chClicked(13)" id="ch_13" class="chambre"
+                                  x="492" y="207" fill="none"
                                   width="55.5" height="85.5"/>
-                            <polygon onmouseover="chListHover(14)" onClick="chClicked(14)" id="terasse" class="chambre" fill="none" points="505.5,206 505.25,108 566,107.5 569,88 577.5,72.5 588.5,56.5 605.5,40 622,30.5 638,22
+                            <polygon onmouseover="chListHover(14)" onClick="chClicked(14)" id="terasse" class="chambre"
+                                     fill="none" points="505.5,206 505.25,108 566,107.5 569,88 577.5,72.5 588.5,56.5 605.5,40 622,30.5 638,22
 		663,13.5 688,6 717,0 730.5,0 730.5,163.5 663,163.5 665,205 	"/>
-                            <polygon onmouseover="chListHover(15)" onClick="chClicked(15)" id="soins_1" class="chambre" fill="none"
+                            <polygon onmouseover="chListHover(15)" onClick="chClicked(15)" id="soins_1" class="chambre"
+                                     fill="none"
                                      points="411,230 323.5,229 304,257.5 304,277 324,294.5 412,294 	"/>
-                            <rect onmouseover="chListHover(16)" onClick="chClicked(16)" id="ch_16" class="chambre" x="11" y="325" fill="none"
+                            <rect onmouseover="chListHover(16)" onClick="chClicked(16)" id="ch_16" class="chambre"
+                                  x="11" y="325" fill="none"
                                   width="62.6667"
                                   height="124.6667"/>
-                            <rect onmouseover="chListHover(17)" onClick="chClicked(17)" id="ch_17" class="chambre" x="75.3333" y="320" fill="none"
+                            <rect onmouseover="chListHover(17)" onClick="chClicked(17)" id="ch_17" class="chambre"
+                                  x="75.3333" y="320" fill="none"
                                   width="57.3333"
                                   height="92.6667"/>
-                            <rect onmouseover="chListHover(18)" onClick="chClicked(18)" id="ch_18" class="chambre" x="132.6667" y="330"
+                            <rect onmouseover="chListHover(18)" onClick="chClicked(18)" id="ch_18" class="chambre"
+                                  x="132.6667" y="330"
                                   fill="none" width="61"
                                   height="82.6667"/>
-                            <rect onmouseover="chListHover(28)" onClick="chClicked(28)" id="escaliers_1" class="chambre" x="193.6667" y="328.3333"
+                            <rect onmouseover="chListHover(28)" onClick="chClicked(28)" id="escaliers_1" class="chambre"
+                                  x="193.6667" y="328.3333"
                                   fill="none" width="54.6667"
                                   height="84.3333"/>
-                            <rect onmouseover="chListHover(26)" onClick="chClicked(26)" id="balcon_2" class="chambre" x="73.6667" y="413.6667"
+                            <rect onmouseover="chListHover(26)" onClick="chClicked(26)" id="balcon_2" class="chambre"
+                                  x="73.6667" y="413.6667"
                                   fill="none" width="173"
                                   height="35.6667"/>
-                            <rect onmouseover="chListHover(19)" onClick="chClicked(19)" id="ch_19" class="chambre" x="248.6667" y="351.6667"
+                            <rect onmouseover="chListHover(19)" onClick="chClicked(19)" id="ch_19" class="chambre"
+                                  x="248.6667" y="351.6667"
                                   fill="none" width="59.3333"
                                   height="96.6667"/>
-                            <rect onmouseover="chListHover(20)" onClick="chClicked(20)" id="ch_20" class="chambre" x="307.6667" y="331"
+                            <rect onmouseover="chListHover(20)" onClick="chClicked(20)" id="ch_20" class="chambre"
+                                  x="307.6667" y="331"
                                   fill="none" width="57.6667"
                                   height="81"/>
-                            <rect onmouseover="chListHover(21)" onClick="chClicked(21)" id="ch_21" class="chambre" x="366" y="320.3333"
+                            <rect onmouseover="chListHover(21)" onClick="chClicked(21)" id="ch_21" class="chambre"
+                                  x="366" y="320.3333"
                                   fill="none" width="56.3333"
                                   height="92.6667"/>
-                            <polygon onmouseover="chListHover(22)" onClick="chClicked(22)" id="ch_22" class="chambre" fill="none" points="458.25,322 422.3333,320.3333 423.5,412 428,412 427.25,450.5 494.5,451.5 493.75,352.75
+                            <polygon onmouseover="chListHover(22)" onClick="chClicked(22)" id="ch_22" class="chambre"
+                                     fill="none" points="458.25,322 422.3333,320.3333 423.5,412 428,412 427.25,450.5 494.5,451.5 493.75,352.75
 		459.5,353.25 458.2799,322.7484 	"/>
-                            <rect onmouseover="chListHover(29)" onClick="chClicked(29)" id="escaliers_2" class="chambre" x="495" y="330"
+                            <rect onmouseover="chListHover(29)" onClick="chClicked(29)" id="escaliers_2" class="chambre"
+                                  x="495" y="330"
                                   fill="none" width="53"
                                   height="82.75"/>
-                            <rect onmouseover="chListHover(23)" onClick="chClicked(23)"  id="ch_23" class="chambre" x="548" y="330" fill="none"
+                            <rect onmouseover="chListHover(23)" onClick="chClicked(23)" id="ch_23" class="chambre"
+                                  x="548" y="330" fill="none"
                                   width="58.5" height="83"/>
-                            <rect onmouseover="chListHover(24)" onClick="chClicked(24)" id="ch_24" class="chambre" x="606.5" y="321" fill="none"
+                            <rect onmouseover="chListHover(24)" onClick="chClicked(24)" id="ch_24" class="chambre"
+                                  x="606.5" y="321" fill="none"
                                   width="56.8333" height="92"/>
-                            <rect onmouseover="chListHover(25)" onClick="chClicked(25)" id="ch_25" class="chambre" x="666" y="321" fill="none"
+                            <rect onmouseover="chListHover(25)" onClick="chClicked(25)" id="ch_25" class="chambre"
+                                  x="666" y="321" fill="none"
                                   width="66.3333"
                                   height="129.6667"/>
-                            <rect onmouseover="chListHover(27)" onClick="chClicked(27)" id="balcon_3" class="chambre" x="494" y="414" fill="none"
+                            <rect onmouseover="chListHover(27)" onClick="chClicked(27)" id="balcon_3" class="chambre"
+                                  x="494" y="414" fill="none"
                                   width="173" height="36"/>
-                            <rect onmouseover="chListHover(30)" onClick="chClicked(30)" id="couloir_1" class="chambre" x="9.3333" y="292.6667"
+                            <rect onmouseover="chListHover(30)" onClick="chClicked(30)" id="couloir_1" class="chambre"
+                                  x="9.3333" y="292.6667"
                                   fill="none" width="682"
                                   height="34.6667"/>
-                            <polygon onmouseover="chListHover(31)" onClick="chClicked(31)" id="couloir_2" class="chambre" fill="none" points="265.25,193.25 322.25,193.25 332,203 332,230 325,230.25 305.25,255.75 304.75,276
+                            <polygon onmouseover="chListHover(31)" onClick="chClicked(31)" id="couloir_2"
+                                     class="chambre" fill="none" points="265.25,193.25 322.25,193.25 332,203 332,230 325,230.25 305.25,255.75 304.75,276
 		325.75,296 264.75,295.25 	"/>
-                            <polygon onmouseover="chListHover(32)" onClick="chClicked(32)" id="couloir_3" class="chambre" fill="none"
+                            <polygon onmouseover="chListHover(32)" onClick="chClicked(32)" id="couloir_3"
+                                     class="chambre" fill="none"
                                      points="440.5,193.25 481.5,192.5 483,292 450,293.5 450,215.5 442.5,216 	"/>
                         </g>
 </svg>
@@ -822,22 +854,29 @@
 
         <div class="col-lg-3 col-md-3 col-3 col-sm-3">
             <div class="card">
-                <div class="card-header" onmouseover="resetmList()">
-                    <span class="card-title">Liste des personnes</span>
+
+                <div class="card-header">
+                    <span class="card-title float-left">Liste des personnes</span>
+                    <div class="float-right">
+                        <button class="btn btn-primary float-right" data-remodal-target="add-pensioner">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
                 </div>
+
                 <div class="card-body p-0 rooms-list">
                     <div class="scroll">
                         <div class="table-responsive">
                             <table class="table table-md table-striped">
                                 <tbody id="people">
-                              {{--  @foreach($rooms as $r)
-                                    <tr id="tr_{{$loop->iteration}}"
-                                        class="{{$r->type == \App\Enums\PieceTypes::SOINS ? 'is-soins' : ''}} {{$r->isInterdite == 1 ? 'is-interdite' : ''}}"
-                                        onmouseover="chListHover({{$loop->iteration}})">
-                                        <td>berrehal ouala eddine</td>
-                                        <td>{{$r->name}}</td>
-                                    </tr>
-                                @endforeach--}}
+                                {{--  @foreach($rooms as $r)
+                                      <tr id="tr_{{$loop->iteration}}"
+                                          class="{{$r->type == \App\Enums\PieceTypes::SOINS ? 'is-soins' : ''}} {{$r->isInterdite == 1 ? 'is-interdite' : ''}}"
+                                          onmouseover="chListHover({{$loop->iteration}})">
+                                          <td>berrehal ouala eddine</td>
+                                          <td>{{$r->name}}</td>
+                                      </tr>
+                                  @endforeach--}}
                                 </tbody>
                             </table>
                         </div>
@@ -847,7 +886,7 @@
         </div>
 
     </div>
-    <audio id="soundHandle"  style="display: none;">
+    <audio id="soundHandle" style="display: none;">
         <source src="/buzzer.mp3" type="audio/mpeg">
     </audio>
 
@@ -860,7 +899,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div   class="modal-body">
+                <div class="modal-body">
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -872,7 +911,7 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody  id="popup">
+                        <tbody id="popup">
 
                         </tbody>
                     </table>
@@ -902,7 +941,7 @@
                 nom: "{{$r->name}}",
                 type: "{{$r->type}}",
                 isInterdite:{{$r->isInterdite}},
-                peoples:[],
+                peoples: [],
                 corners: [
                     <?php
                     $co = json_decode($r->data)->corners;
@@ -914,9 +953,6 @@
             },
             @endforeach
         ]
-
-
-
 
 
     </script>
