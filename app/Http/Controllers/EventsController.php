@@ -252,7 +252,7 @@ class EventsController extends Controller
 
     private function hasRight($person, $nearestRoom)
     {
-        echo "has right(".$person->type."isInterdite". $this->allRooms[$nearestRoom - 1]->isInterdite.") \n";
+        echo "has right( ".$person->type." , isInterdite :". $this->allRooms[$nearestRoom - 1]->isInterdite.") \n";
 
         if ($person->type == "PENSIONNAIRE") {
             $room = $this->allRooms[$nearestRoom - 1];
@@ -317,6 +317,7 @@ class EventsController extends Controller
 
     private function declancherAlerte($person, $room)
     {
+        echo "declancherAlerte($person, $room) \n";
         event(new AlerteEvent($person, $room));
     }
 
