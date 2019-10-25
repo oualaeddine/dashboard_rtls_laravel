@@ -15,10 +15,10 @@ class AdminsSeeding extends Seeder
         DB::table('admins')->insert(
             [
                 [
-                    'firstname' => 'bekhiekh',
-                    'lastname' => 'djamal',
-                    'email' => 'djamal@a.com',
-                    'password' => bcrypt('123456'),
+                    'firstname' => 'Admin',
+                    'lastname' => 'Admin',
+                    'email' => 'admin@rtls.com',
+                    'password' => bcrypt('adminrtls'),
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now(),
                 ],
